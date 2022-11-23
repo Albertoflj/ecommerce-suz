@@ -1,0 +1,12 @@
+@use "./fonts/fonts.scss" as f;
+a:visited {
+  color: f.$black;
+  text-decoration: none;
+}
+a {
+  color: f.$black;
+  text-decoration: none;
+}
+
+body {
+}

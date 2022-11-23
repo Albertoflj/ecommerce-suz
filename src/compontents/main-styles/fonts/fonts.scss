@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url(./brandon-grotesque/Brandon_bld.otf) format("opentype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url(./proxima-nova/proxima-nova.otf) format("opentype");
+}
+@font-face {
+  font-family: "Inter";
+  src: url(./inter/interb900.otf) format("opentype");
+  font-weight: 900;
+}
+$black: #231c1c;
+$black75: rgba(35, 28, 28, 0.75);
+$black50: rgba(35, 28, 28, 0.5);
+$black25: rgba(35, 28, 28, 0.25);
+$black10: rgba(35, 28, 28, 0.1);
+
+$orange: #e8480c;

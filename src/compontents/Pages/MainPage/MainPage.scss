@@ -1,0 +1,42 @@
+@use "../../main-styles/fonts/fonts.scss" as f;
+
+.main-page-content {
+  margin-top: 62px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  h1 {
+    font-size: 60px;
+    font-family: "Brandon Grotesque";
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  .main-text {
+    max-width: 542px;
+    width: 100%;
+    line-height: 300%;
+    color: f.$black;
+    p {
+      max-width: 412px;
+      font-size: 24px;
+      font-family: "Proxima Nova";
+      font-weight: 400;
+      line-height: 1.2;
+    }
+  }
+  .shop-now {
+    padding: 8px 24px;
+    background-color: f.$orange;
+    font-family: "Brandon Grotesque";
+    font-weight: 700;
+    font-size: 21px;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    margin-left: 30%;
+  }
+  .shop-now:hover {
+    opacity: 90%;
+  }
+}

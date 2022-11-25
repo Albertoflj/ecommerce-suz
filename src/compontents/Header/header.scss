@@ -1,40 +1,192 @@
 @use "../main-styles/fonts/fonts.scss" as f;
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+@import "../main-styles/mixins.scss";
+
+//animations for links
+@keyframes moveRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
 
 header {
   font-size: 32px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 108px;
-  padding: 0 96px;
   box-shadow: 0px 0px 0px 1px f.$black10;
-  .logo {
-    font-family: "Inter";
-    font-size: 32px;
-    color: f.$black;
-  }
-  .header-right {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 212px;
-    width: 100%;
-  }
+}
+.logo {
+  font-family: "Inter";
+  font-size: 32px;
+  color: f.$black;
+}
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 212px;
+  width: 100%;
+}
 
-  .cart {
-    height: 30px;
-    width: 30px;
+.cart {
+  height: 30px;
+  width: 30px;
+}
+.fav {
+  height: 30px;
+  width: 24px;
+}
+.cart,
+.fav,
+button {
+  background-color: transparent;
+  border: none;
+}
+.cart:hover,
+.fav:hover {
+  cursor: pointer;
+}
+.categories {
+  max-width: 180px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
+.underline-animation::after {
+  content: "";
+  display: block;
+  background-color: rgb(0, 0, 0);
+  height: 3px;
+  opacity: 0;
+  position: relative;
+  bottom: 8px;
+}
+.underline-animation:hover::after {
+  animation: moveRight 350ms ease-in-out;
+  opacity: 1;
+}
+.underline-animation {
+  overflow-x: hidden;
+}
+.hamburger-menu {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  :not(:last-child) {
+    margin-bottom: 4px;
+  }
+  span {
+    height: 2px;
+    width: 24px;
+    background-color: black;
+  }
+}
+.menu-inactive {
+  display: none;
+}
+.menu-active {
+  font-family: "Brandon Grotesque";
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  min-height: 120vh;
+  bottom: 0;
+  left: 0;
+  z-index: 55;
+  animation: moveRight 400ms ease-in-out;
+  transition: transform 300ms;
+
+  ul {
+    font-size: 28px;
+    top: 30%;
+    position: absolute;
+    :not(:last-child) {
+      margin-bottom: 30px;
+    }
+    text-transform: uppercase;
+    li {
+      width: fit-content;
+      overflow-x: hidden;
+    }
+  }
+  a {
+    color: white !important;
+  }
+  .underline-animation {
+    overflow-x: none;
+  }
+  .underline-animation::after {
+    background-color: rgb(255, 255, 255);
   }
   .fav {
-    height: 30px;
-    width: 24px;
+    text-transform: uppercase;
+    width: inherit;
+    color: white;
+    font-family: "Brandon Grotesque";
+    font-size: 28px;
+    padding: 0;
   }
-  .categories {
-    max-width: 180px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 30px;
+}
+.hamburger-icon {
+  z-index: 100;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: height 200ms ease-in-out;
+  :not(:last-child) {
+    margin-bottom: 3px;
+  }
+
+  span {
+    height: 4px;
+    width: 30px;
+    background-color: f.$black;
+    border-radius: 10px;
+    transition: all 300ms ease-in-out;
+  }
+}
+
+//!!BREAKPOINTS
+
+@include breakpoint-down(large) {
+  header {
+    .logo {
+      font-size: 24px;
+    }
+    .underline-animation::after {
+      height: 2px;
+      bottom: 3px;
+    }
+    .categories {
+      a {
+        font-size: 21px;
+      }
+      max-width: 120px;
+    }
+
+    .header-right {
+      font-size: 21px;
+      .fav {
+        height: 24px;
+        width: 18px;
+      }
+      .cart {
+        height: 24px;
+        width: 24px;
+      }
+      max-width: 150px;
+    }
   }
 }

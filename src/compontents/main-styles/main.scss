@@ -1,4 +1,5 @@
 @use "./fonts/fonts.scss" as f;
+@import "../main-styles/mixins.scss";
 a:visited {
   color: f.$black;
   text-decoration: none;
@@ -9,4 +10,43 @@ a {
 }
 
 body {
+  transition: all 0.5s ease-in-out;
+}
+header {
+  .desktop {
+    display: flex;
+  }
+  .mobile {
+    display: none;
+  }
+}
+.padding {
+  padding: 0 96px;
+}
+.shadow {
+  //shadow x 0 y 5 blur 9 spread 0 color rgba(35, 28, 28, 30)
+  box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
+}
+.dnon {
+  display: none;
+}
+@include breakpoint-down(large) {
+  .padding {
+    padding: 0 32px;
+  }
+}
+
+@include breakpoint-down(small) {
+  //!! Shouldn't be only for header
+  header {
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: flex;
+    }
+    .header-right {
+      max-width: 24px;
+    }
+  }
 }

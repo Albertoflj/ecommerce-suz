@@ -1,0 +1,78 @@
+@use "../../main-styles/fonts/fonts.scss" as f;
+.trending-products {
+  a {
+    pointer-events: none;
+  }
+  .trending-products-container {
+    overflow-x: hidden;
+  }
+  button {
+    cursor: pointer;
+    height: 32px;
+    min-width: 32px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .arrow-right {
+    img {
+      transform: rotate(180deg);
+    }
+  }
+  width: 100%;
+  height: fit-content;
+  color: f.$black;
+  margin-bottom: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .trending-products-cards {
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+  }
+  .trending-product-card {
+    pointer-events: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
+    min-width: 240px;
+    overflow-y: hidden;
+    height: fit-content;
+    margin: 0 10px;
+    img {
+      width: 100%;
+    }
+    .trending-product-text {
+      margin-left: 8px;
+      h3 {
+        pointer-events: stroke;
+        font-size: 24px;
+        font-family: "Brandon Grotesque";
+        font-weight: 700;
+        margin: 0;
+      }
+      h6 {
+        font-size: 15px;
+        font-family: "Proxima Nova";
+        font-weight: 400;
+        color: f.$black75;
+        margin: 0;
+        margin-bottom: 4px;
+      }
+      h4 {
+        font-size: 18px;
+        font-family: "Brandon Grotesque";
+        font-weight: 700;
+        margin: 0;
+        color: f.$black;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

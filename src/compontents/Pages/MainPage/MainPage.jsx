@@ -4,8 +4,15 @@ import Slides from "../../Main Page Components/SlideShow/Slides";
 import MenCategoryImage from "../../../Assets/Products/men/photo_1a.jpg";
 import WomenCategoryImage from "../../../Assets/Products/women/1.jpg";
 import { Link } from "react-router-dom";
+import TrendingProducts from "../../Main Page Components/Trending Now/TrendingProducts";
 
 const MainPage = (props) => {
+  const scrollToCategories = () => {
+    window.scrollTo({
+      top: 1000,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <Header />
@@ -22,9 +29,9 @@ const MainPage = (props) => {
                 porta faucibus id.
               </p>
             </div>
-            <button className="shop-now shadow desktop-medium">Shop Now</button>
+            <button className="shop-now shadow desktop-medium" onClick={() => {scrollToCategories()}}>Shop Now</button>
           </div>
-          <Slides products={props.products} />
+          <Slides products={props.products} scroll={scrollToCategories} />
         </section>
 
         <section className="categories-section">
@@ -53,6 +60,7 @@ const MainPage = (props) => {
             </div>
           </div>
         </section>
+        <TrendingProducts products={props.products} />
       </div>
     </>
   );

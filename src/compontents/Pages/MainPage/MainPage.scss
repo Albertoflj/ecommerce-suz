@@ -1,10 +1,17 @@
 @use "../../main-styles/fonts/fonts.scss" as f;
+@import "../../main-styles/mixins.scss";
 
-.main-page-content {
+.hero-section {
   margin-top: 62px;
-  width: 100%;
+  // width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 134px;
+  // box-shadow: 0px 0px 0px 1px f.$black10;
+  .mobile-medium {
+    display: none;
+  }
   h1 {
     font-size: 60px;
     font-family: "Brandon Grotesque";
@@ -38,5 +45,140 @@
   }
   .shop-now:hover {
     opacity: 90%;
+  }
+  .content-right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // margin-left: 20%;
+  }
+  .content-left-side {
+    margin-right: 20px;
+  }
+}
+.categories-section {
+  min-height: 600px;
+  max-width: 1020px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  .categories-men,
+  .categories-women {
+    width: 100%;
+    max-width: 454px;
+    height: inherit;
+  }
+
+  .category-image {
+    box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
+  }
+  .cat-centr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cat-man,
+  .cat-woman {
+    height: 100%;
+    max-height: 324px;
+  }
+  .cat-man {
+    width: 100%;
+    // background-color: blue;
+    background-image: url("../../../Assets/Products/men/photo_1a.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .cat-woman {
+    width: 100%;
+    // background-color: red;
+    background-image: url("../../../Assets/Products/women/1.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+@include breakpoint-down(extra-large) {
+  // .categories-section {
+  //   .categories-men,
+  //   .categories-women {
+  //     // height: 300px;
+  //     max-width: 421px;
+  //   }
+  // }
+}
+@include breakpoint-down(large) {
+  .hero-section {
+    justify-content: space-between;
+    h1 {
+      font-size: 42px;
+    }
+    .main-text {
+      max-width: 542px;
+      p {
+        max-width: 412px;
+        font-size: 21px;
+      }
+    }
+    .shop-now {
+      padding: 8px 24px;
+      background-color: f.$orange;
+      font-size: 21px;
+
+      .content-right-side {
+        // margin-left: 20%;
+      }
+    }
+  }
+}
+@include breakpoint-down(medium) {
+  .hero-section {
+    margin-top: 12px;
+    flex-direction: column;
+    h1 {
+      font-size: 42px;
+    }
+    .main-text {
+      max-width: 542px;
+      p {
+        max-width: 412px;
+        font-size: 21px;
+      }
+    }
+    .desktop-medium {
+      display: none;
+    }
+    .mobile-medium {
+      display: flex;
+    }
+    .shop-now {
+      padding: 8px 24px;
+      background-color: f.$orange;
+      font-size: 21px;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+    .content-right-side {
+      margin-top: 20px;
+    }
+    .content-left-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .shop-now {
+        margin-left: 0;
+      }
+      text-align: center;
+      margin: 0;
+      .main-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
   }
 }

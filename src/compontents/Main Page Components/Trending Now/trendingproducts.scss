@@ -1,10 +1,23 @@
 @use "../../main-styles/fonts/fonts.scss" as f;
+@import "../../main-styles/mixins.scss";
 .trending-products {
+  .trending-title {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Brandon Grotesque";
+  }
+  .trending-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
   a {
     pointer-events: none;
   }
   .trending-products-container {
     overflow-x: hidden;
+    max-width: 1200px;
   }
   button {
     cursor: pointer;
@@ -23,19 +36,15 @@
   width: 100%;
   height: fit-content;
   color: f.$black;
-  margin-bottom: 300px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 200px;
+
   .trending-products-cards {
     height: 400px;
     display: flex;
     flex-direction: row;
     align-items: center;
     // justify-content: space-around;
-    width: 100%;
-    max-width: 1200px;
+    width: fit-content;
   }
   .trending-product-card {
     pointer-events: none;
@@ -74,5 +83,15 @@
         margin-bottom: 8px;
       }
     }
+  }
+}
+@include breakpoint-down(small) {
+  .trending-products {
+    .trending-title {
+      width: 100%;
+      text-align: center;
+    }
+    justify-content: center;
+    margin-bottom: 100px;
   }
 }

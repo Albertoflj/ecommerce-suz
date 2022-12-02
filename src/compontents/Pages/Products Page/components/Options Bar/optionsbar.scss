@@ -1,0 +1,25 @@
+@use "../../../../main-styles/fonts/fonts.scss" as f;
+.options-bar {
+  margin-bottom: 80px;
+  box-shadow: 0px 1px 0px 1px f.$black75;
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-end;
+  .options-bar-content {
+    max-width: 1218;
+    button,
+    img {
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+    }
+    button {
+      margin-bottom: 10px;
+      padding: 0;
+    }
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+}

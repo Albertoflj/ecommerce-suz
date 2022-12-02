@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { commerce } from "./lib/commerce";
 import { useState, useEffect } from "react";
 import MainPage from "./compontents/Pages/MainPage/MainPage";
+import ProductsPage from "./compontents/Pages/Products Page/ProductsPage";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -29,8 +30,14 @@ function App() {
           <Routes>
             <Route path="/" element={<MainPage products={products} />} />
             <Route path="/about" element={<Header products={products} />} />
-            <Route path="/men" element={<Header products={products} />} />
-            <Route path="/women" element={<Header products={products} />} />
+            <Route
+              path="/men"
+              element={<ProductsPage products={products} category="m" />}
+            />
+            <Route
+              path="/women"
+              element={<ProductsPage products={products} category="w" />}
+            />
           </Routes>
         )}
       </div>

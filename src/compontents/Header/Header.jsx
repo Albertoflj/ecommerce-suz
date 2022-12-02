@@ -67,8 +67,7 @@ const Header = () => {
       <div className="header-right">
         <Link
           to="/about"
-          className="header-right-About underline-animation desktop"
-          href=""
+          className="header-right-about desktop underline-animation"
         >
           About
         </Link>
@@ -113,7 +112,6 @@ const Header = () => {
               <Link
                 to="/women"
                 className="categories-women underline-animation"
-                href=""
                 onClick={closeMenu}
               >
                 Women

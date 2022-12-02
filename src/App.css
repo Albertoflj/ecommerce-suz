@@ -1,7 +1,9 @@
-.App {
-  
+*{
+    /* border: 1px red solid; */
 }
-
+button{
+    padding:0;
+}
 
 
 

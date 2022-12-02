@@ -67,7 +67,7 @@ button {
   height: 3px;
   opacity: 0;
   position: relative;
-  bottom: 8px;
+  // bottom: 8px;
 }
 .underline-animation:hover::after {
   animation: moveRight 350ms ease-in-out;

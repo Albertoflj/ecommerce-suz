@@ -5,6 +5,7 @@ import MenCategoryImage from "../../../Assets/Products/men/photo_1a.jpg";
 import WomenCategoryImage from "../../../Assets/Products/women/1.jpg";
 import { Link } from "react-router-dom";
 import TrendingProducts from "../../Main Page Components/Trending Now/TrendingProducts";
+import Footer from "../../Footer/Footer";
 
 const MainPage = (props) => {
   const scrollToCategories = () => {
@@ -62,6 +63,7 @@ const MainPage = (props) => {
         </section>
         <TrendingProducts products={props.products} />
       </div>
+      <Footer />
     </>
   );
 };

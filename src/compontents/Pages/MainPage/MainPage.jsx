@@ -22,15 +22,25 @@ const MainPage = (props) => {
           <div className="content-left-side">
             <div className="main-text">
               <h1 className="page-title">
-                Lorem ipsum dolor sit amet consectetur.
+                A world of shoes at your fingertips.
               </h1>
               <p className="page-description">
-                Lorem ipsum dolor sit amet consectetur. Ornare consectetur in
+                {/* Lorem ipsum dolor sit amet consectetur. Ornare consectetur in
                 consectetur magna. Nec integer nisi in fusce ornare ultrices
-                porta faucibus id.
+                porta faucibus id. */}
+                Our collection features the latest trends and classic designs
+                from top brands, so you can always find a shoe that fits your
+                personal style.
               </p>
             </div>
-            <button className="shop-now shadow desktop-medium" onClick={() => {scrollToCategories()}}>Shop Now</button>
+            <button
+              className="shop-now shadow desktop-medium"
+              onClick={() => {
+                scrollToCategories();
+              }}
+            >
+              Shop Now
+            </button>
           </div>
           <Slides products={props.products} scroll={scrollToCategories} />
         </section>

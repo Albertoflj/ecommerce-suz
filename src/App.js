@@ -8,6 +8,7 @@ import { commerce } from "./lib/commerce";
 import { useState, useEffect } from "react";
 import MainPage from "./compontents/Pages/MainPage/MainPage";
 import ProductsPage from "./compontents/Pages/Products Page/ProductsPage";
+import Filter from "./compontents/Filter/Filter";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -38,6 +39,7 @@ function App() {
               path="/women"
               element={<ProductsPage products={products} category="w" />}
             />
+            <Route path="/product/AF1L" element={<Filter />} />
           </Routes>
         )}
       </div>

@@ -27,7 +27,7 @@
     line-height: 300%;
     color: f.$black;
     p {
-      max-width: 412px;
+      max-width: 512px;
       font-size: 24px;
       font-family: "Proxima Nova";
       font-weight: 400;
@@ -108,6 +108,14 @@
     background-size: cover;
     background-position: center;
   }
+}
+.filter-on-sale {
+  h6 {
+    margin-bottom: 0 !important;
+  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 // @include breakpoint-down(extra-large) {
 //   .categories-section {

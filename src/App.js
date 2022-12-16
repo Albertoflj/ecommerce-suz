@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import MainPage from "./compontents/Pages/MainPage/MainPage";
 import ProductsPage from "./compontents/Pages/Products Page/ProductsPage";
 import Filter from "./compontents/Filter/Filter";
+import PriceRange from "./compontents/Filter/Price Range/PriceRange";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -40,6 +41,7 @@ function App() {
               element={<ProductsPage products={products} category="w" />}
             />
             <Route path="/product/AF1L" element={<Filter />} />
+            <Route path="/product/NDHR" element={<PriceRange />} />
           </Routes>
         )}
       </div>

@@ -7,8 +7,8 @@ const ProductList = (props)=>{
         {
             props.products.map((product)=>{
                 // if(product.categories[0].name.slice(0,1).toLowerCase() === props.category){
-                // return (
-                return ( <><Link to={`/product/${product.sku}`} className="product-list-link">
+                return (
+                 <><Link to={`/product/${product.sku}`} className="product-list-link">
                     <ProductCard product={product}/>
                 </Link>
                 <Link to={`/product/${product.sku}`} className="product-list-link">
@@ -17,7 +17,7 @@ const ProductList = (props)=>{
                 </>
                 )
                 // )}
-            
+                // }
             })
             
             

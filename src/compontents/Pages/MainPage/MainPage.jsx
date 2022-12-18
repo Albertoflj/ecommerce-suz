@@ -35,7 +35,7 @@ const MainPage = (props) => {
             </div>
             <button
               className="shop-now shadow desktop-medium"
-              onClick={() => {
+              onChange={() => {
                 scrollToCategories();
               }}
             >

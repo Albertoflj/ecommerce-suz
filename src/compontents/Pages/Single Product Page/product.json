@@ -1,0 +1,77 @@
+{
+  "id": "prod_ypbroEyyM1o8n4",
+  "created": 1669104344,
+  "updated": 1671313359,
+  "active": true,
+  "permalink": "Isf7ZZ",
+  "name": "Air Force 1 Low",
+  "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+  "price": {
+    "raw": 99.99,
+    "formatted": "99.99",
+    "formatted_with_symbol": "$99.99",
+    "formatted_with_code": "99.99 USD"
+  },
+  "inventory": { "managed": true, "available": 100 },
+  "sku": "AF1L",
+  "sort_order": 0,
+  "seo": { "title": null, "description": null },
+  "thank_you_url": null,
+  "meta": null,
+  "conditionals": {
+    "is_active": true,
+    "is_tax_exempt": false,
+    "is_pay_what_you_want": false,
+    "is_inventory_managed": true,
+    "is_sold_out": false,
+    "has_digital_delivery": false,
+    "has_physical_delivery": false,
+    "has_images": true,
+    "collects_fullname": true,
+    "collects_shipping_address": true,
+    "collects_billing_address": true,
+    "collects_extra_fields": false
+  },
+  "is": {
+    "active": true,
+    "tax_exempt": false,
+    "pay_what_you_want": false,
+    "inventory_managed": true,
+    "sold_out": false
+  },
+  "has": {
+    "digital_delivery": false,
+    "physical_delivery": false,
+    "images": true
+  },
+  "collects": {
+    "fullname": true,
+    "shipping_address": true,
+    "billing_address": true,
+    "extra_fields": false
+  },
+  "checkout_url": {
+    "checkout": "https://checkout.chec.io/Isf7ZZ?checkout=true",
+    "display": "https://checkout.chec.io/Isf7ZZ"
+  },
+  "categories": [
+    {
+      "id": "cat_N7GKwbrbNw3EX4",
+      "slug": "mens-collection",
+      "name": "Mens Collection"
+    }
+  ],
+  "image": {
+    "id": "ast_8XO3wpQvWNoYAz",
+    "url": "https://cdn.chec.io/merchants/48662/assets/7ZdSGWoMI13aTjWE|af1l.png",
+    "description": null,
+    "is_image": true,
+    "filename": "af1l.png",
+    "file_size": 10470,
+    "file_extension": "png",
+    "image_dimensions": { "width": 592, "height": 592 },
+    "meta": [],
+    "created_at": 1669104326,
+    "updated_at": 1669104328
+  }
+}

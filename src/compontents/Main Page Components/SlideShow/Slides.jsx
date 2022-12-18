@@ -30,9 +30,14 @@ const Slides = (props) => {
           className="slide-show-product"
         />
       </div>
-      <button className="shop-now shadow mobile-medium" onClick={()=>{
-        props.scroll()
-      }}>Shop Now</button>
+      <button
+        className="shop-now shadow mobile-medium"
+        onChange={() => {
+          props.scroll();
+        }}
+      >
+        Shop Now
+      </button>
     </div>
   );
 };

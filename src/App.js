@@ -10,6 +10,7 @@ import MainPage from "./compontents/Pages/MainPage/MainPage";
 import ProductsPage from "./compontents/Pages/Products Page/ProductsPage";
 import Filter from "./compontents/Filter/Filter";
 import PriceRange from "./compontents/Filter/Price Range/PriceRange";
+import SingleProductPage from "./compontents/Pages/Single Product Page/SingleProductPage";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -40,8 +41,18 @@ function App() {
               path="/women"
               element={<ProductsPage products={products} category="w" />}
             />
-            <Route path="/product/AF1L" element={<Filter />} />
-            <Route path="/product/NDHR" element={<PriceRange />} />
+            {/* <Route path="/product/AF1L" element={<Filter />} />
+            <Route path="/product/NDHR" element={<PriceRange />} /> */}
+            {products.map((product) => {
+              return (
+                <Route
+                  path={`/product/${product.sku}`}
+                  element={
+                    <SingleProductPage product={product} key={product.id} />
+                  }
+                />
+              );
+            })}
           </Routes>
         )}
       </div>

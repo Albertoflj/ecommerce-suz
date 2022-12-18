@@ -43,7 +43,7 @@ const Header = () => {
     <header className="padding">
       <button
         className={"hamburger-icon mobile " + hamburgerMenu}
-        onClick={() => handleHamburgerMenu()}
+        onChange={() => handleHamburgerMenu()}
       >
         <span></span>
         <span></span>
@@ -77,7 +77,7 @@ const Header = () => {
 
         <Badge badgeContent={0} color="secondary" overlap="rectangular">
           <button
-            onClick={() => {
+            onChange={() => {
               handleFavorites();
             }}
             className="fav desktop"
@@ -87,7 +87,7 @@ const Header = () => {
         </Badge>
         <Badge badgeContent={cartCount} color="secondary" overlap="rectangular">
           <button
-            onClick={() => {
+            onChange={() => {
               handleCart();
             }}
             className="cart"
@@ -103,7 +103,7 @@ const Header = () => {
               <Link
                 to="/men"
                 className="categories-men underline-animation"
-                onClick={closeMenu}
+                onChange={closeMenu}
               >
                 Men
               </Link>
@@ -112,7 +112,7 @@ const Header = () => {
               <Link
                 to="/women"
                 className="categories-women underline-animation"
-                onClick={closeMenu}
+                onChange={closeMenu}
               >
                 Women
               </Link>
@@ -120,7 +120,7 @@ const Header = () => {
             <li>
               <Badge badgeContent={0} color="secondary" overlap="rectangular">
                 <button
-                  onClick={() => {
+                  onChange={() => {
                     handleFavorites();
                     closeMenu();
                   }}

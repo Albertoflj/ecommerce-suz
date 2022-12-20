@@ -6,29 +6,25 @@ import "../../Filter/filter.scss";
 import CartPlus from "../../../Assets/icons/icons/cart-plus.svg";
 import { useState } from "react";
 import { useEffect } from "react";
+import {commerce} from "../../../lib/commerce.js"
+import Sizes from "../../Sizes/Sizes";
 
 const SingleProductPage = (props) => {
   let product = props.product;
   console.log(product);
-  //   let description = product.description.replace(/<\/?p>/g, '');;
-  useEffect(() => {
-    //fetch product variants
-
-    fetch(`https://api.chec.io/v1/products/${product.id}/variants`, {
-      method: "GET",
-      headers: {
-        "X-Authorization": "pk_48662fc4a85df6bd1b5a1276f4d59d3162e714bd1e2e4",
-      },
-    }).then((data) => {
-      console.log(data);
-    });
-  });
-  // console.log(JSON.stringify(product));
-  const [selectedSize, setSelectedSize] = useState();
-  function onSelectedSize(buttonValue) {
-    setSelectedSize(buttonValue);
+  const [sizes, setSizes] = useState();
+  async function fetchSizes(){
+    await commerce.products.getVariants(product.id, {
+     
+    }).then((variants) => setSizes(variants.data));
   }
-  //cum selectez cu i item din array daca am useState
+  useEffect(() => {
+    fetchSizes();
+    console.log("sizes",sizes)
+    
+  },[]);
+
+  const [selectedSize, setSelectedSize] = useState();
 
   return (
     <>
@@ -46,76 +42,7 @@ const SingleProductPage = (props) => {
               <p>{product.description.replace(/<\/?p>/g, "")}</p>
             </div>
             <div className="product-actions">
-              <div className="filter-sizes product-size">
-                {/* 
-                //!!SHOULD BE A SEPARATE COMPONENT
-                */}
-                <div className="filter-sizes-checkboxes product-sizes-checkboxes">
-                  <input
-                    type="checkbox"
-                    name="size-40"
-                    id="size40"
-                    className="filter-sizes-checkbox product-size-checkbox"
-                    value="40"
-                    checked={selectedSize === "40"}
-                    onChange={(e) => {
-                      onSelectedSize(e.target.value);
-                    }}
-                  />
-                  <input
-                    type="checkbox"
-                    name="size-41"
-                    id="size41"
-                    className="filter-sizes-checkbox product-size-checkbox"
-                    value="41"
-                    disabled
-                  />
-                  <input
-                    type="checkbox"
-                    name="size-42"
-                    id="size42"
-                    className="filter-sizes-checkbox product-size-checkbox"
-                    value="42"
-                    checked={selectedSize === "42"}
-                    onChange={(e) => {
-                      onSelectedSize(e.target.value);
-                    }}
-                  />
-                  <input
-                    type="checkbox"
-                    name="size-43"
-                    id="size43"
-                    className="filter-sizes-checkbox product-size-checkbox"
-                    value="43"
-                    checked={selectedSize === "43"}
-                    onChange={(e) => {
-                      onSelectedSize(e.target.value);
-                    }}
-                  />
-                  <input
-                    type="checkbox"
-                    name="size-44"
-                    id="size44"
-                    className="filter-sizes-checkbox product-size-checkbox"
-                    value="44"
-                    checked={selectedSize === "44"}
-                    onChange={(e) => {
-                      onSelectedSize(e.target.value);
-                    }}
-                  />
-                  <input
-                    type="checkbox"
-                    name="size-45"
-                    id="size45"
-                    className="filter-sizes-checkbox product-size-checkbox"
-                    value="45"
-                    checked={selectedSize === "45"}
-                    onChange={(e) => {
-                      onSelectedSize(e.target.value);
-                    }}
-                  />
-                </div>
-              </div>
+              <Sizes for={"product"} category={product.categories[0].name} />
               {/* <div className="quantity">
                 <h3>Quantity:</h3>
                 <input type="text" />

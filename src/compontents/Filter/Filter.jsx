@@ -1,6 +1,7 @@
 import "./filter.scss";
 
 import close_icon from "../../Assets/icons/icons/close-icon.png";
+import Sizes from "../Sizes/Sizes";
 
 const Filter = () => {
   return (
@@ -29,54 +30,7 @@ const Filter = () => {
           </div>
           <div className="filter-category"></div>
         </div>
-        <div className="filter-sizes">
-          <h6>Size</h6>
-          <div className="filter-sizes-checkboxes">
-            <input
-              type="checkbox"
-              name="size-40"
-              id="size40"
-              className="filter-sizes-checkbox"
-              value="40"
-            />
-            <input
-              type="checkbox"
-              name="size-41"
-              id="size41"
-              className="filter-sizes-checkbox"
-              value="41"
-              disabled
-            />
-            <input
-              type="checkbox"
-              name="size-42"
-              id="size42"
-              className="filter-sizes-checkbox"
-              value="42"
-            />
-            <input
-              type="checkbox"
-              name="size-43"
-              id="size43"
-              className="filter-sizes-checkbox"
-              value="43"
-            />
-            <input
-              type="checkbox"
-              name="size-44"
-              id="size44"
-              className="filter-sizes-checkbox"
-              value="44"
-            />
-            <input
-              type="checkbox"
-              name="size-45"
-              id="size45"
-              className="filter-sizes-checkbox"
-              value="45"
-            />
-          </div>
-        </div>
+        <Sizes for="filter" />
         <div className="filter-price">
           <h6>Price</h6>
           <div className="filter-price-control">

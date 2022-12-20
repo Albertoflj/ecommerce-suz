@@ -41,6 +41,7 @@ function App() {
               path="/women"
               element={<ProductsPage products={products} category="w" />}
             />
+            <Route path="/filter" element={<Filter />} />
             {/* <Route path="/product/AF1L" element={<Filter />} />
             <Route path="/product/NDHR" element={<PriceRange />} /> */}
             {products.map((product) => {

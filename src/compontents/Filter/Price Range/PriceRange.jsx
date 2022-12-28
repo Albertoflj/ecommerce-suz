@@ -11,20 +11,18 @@ const PriceRange = () => {
   let maxRange = useRef();
   let minGap = 5;
 
-  function onMinRangeChange() {
+  function onRangeChange(left) {
+    // setMinValue(minRange.current.value);
     setMinValue(minRange.current.value);
-    if (minRange.current.value > maxValue - minGap) {
-      setMinValue(maxValue - minGap);
-    }
-    console.log(minValue, maxValue);
-  }
-  function onMaxRangeChange() {
     setMaxValue(maxRange.current.value);
-    if (maxRange.current.value < minValue) {
-      setMaxValue(minValue);
+    // if (minRange.current.value > maxValue) {
+    //   setMinValue(maxValue);
+    // }
+    // console.log(minRange.current.value);
+    // // console.log(minValue, maxValue);
+    if (maxValue - minValue < minGap) {
+      left ? setMinValue(maxValue - minGap) : setMaxValue(minValue + minGap);
     }
-    console.log(maxRange.current.value);
-    // console.log(minValue, maxValue);
   }
 
   return (
@@ -39,7 +37,7 @@ const PriceRange = () => {
           max={300}
           name="min-range"
           id="price-range-min"
-          onInput={() => onMinRangeChange()}
+          onInput={() => onRangeChange(true)}
         />
         <input
           ref={maxRange}
@@ -49,7 +47,7 @@ const PriceRange = () => {
           max={300}
           name="max-range"
           id="price-range-max"
-          onInput={() => onMaxRangeChange()}
+          onInput={() => onRangeChange(false)}
         />
       </div>
     </div>

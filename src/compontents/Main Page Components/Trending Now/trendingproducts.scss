@@ -85,6 +85,12 @@
     }
   }
 }
+.cart-quantity {
+  display: none;
+}
+.trending-product-close-icon {
+  display: none;
+}
 @include breakpoint-down(small) {
   .trending-products {
     .trending-title {

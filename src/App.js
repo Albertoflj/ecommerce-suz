@@ -11,8 +11,14 @@ import ProductsPage from "./compontents/Pages/Products Page/ProductsPage";
 import Filter from "./compontents/Filter/Filter";
 import PriceRange from "./compontents/Filter/Price Range/PriceRange";
 import SingleProductPage from "./compontents/Pages/Single Product Page/SingleProductPage";
+import { getCartItems } from "./redux/cartQuantitySlice";
+import { useDispatch } from "react-redux";
+import AddToCartNotification from "./compontents/AddToCartNotification/AddToCartNotification";
+import Cart from "./compontents/Cart/Cart";
 
 function App() {
+  const dispatch = useDispatch();
+
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const fetchProducts = async () => {
@@ -20,8 +26,10 @@ function App() {
     setProducts(data);
     setIsLoading(false);
   };
+
   useEffect(() => {
     fetchProducts();
+    dispatch(getCartItems());
   }, []);
 
   return (
@@ -42,8 +50,8 @@ function App() {
               element={<ProductsPage products={products} category="w" />}
             />
             <Route path="/filter" element={<Filter />} />
-            {/* <Route path="/product/AF1L" element={<Filter />} />
-            <Route path="/product/NDHR" element={<PriceRange />} /> */}
+            {/* <Route path="/product/AF1L" element={<Filter />} />*/}
+            <Route path="/product/pr" element={<PriceRange />} />
             {products.map((product) => {
               return (
                 <Route
@@ -54,6 +62,8 @@ function App() {
                 />
               );
             })}
+            <Route path="/notification" element={<AddToCartNotification />} />
+            <Route path="/cart" element={<Cart products={products} />} />
           </Routes>
         )}
       </div>

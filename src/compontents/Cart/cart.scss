@@ -1,0 +1,128 @@
+@use "../main-styles/fonts/fonts.scss" as f;
+
+.cart {
+  width: 396px;
+  max-height: 490px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 1000;
+  background-color: white;
+  border-radius: 10px;
+  left: 54%;
+  top: 10%;
+
+  .cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    width: 400px;
+    h3 {
+      font-size: 21px;
+      margin: 0;
+      cursor: pointer;
+    }
+    h6 {
+      margin: 0;
+      font-family: "Proxima Nova";
+      font-weight: 400;
+    }
+    h4 {
+      margin: 0;
+    }
+    .trending-product-card:not(:first-child) {
+      margin-top: 18px;
+    }
+    .cart-items {
+      display: flex;
+      overflow-y: scroll;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 24px;
+      max-height: 250px;
+      //not first child only div with class .trending-product-card
+      .trending-product-card {
+        // border: 1px solid black;
+        justify-content: space-between;
+        height: 90px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        cursor: default;
+        img {
+          width: 90px;
+          height: 90px;
+        }
+        .trending-product-text {
+          max-width: 190px;
+          width: 100%;
+          .trending-product-title {
+            font-size: 21px;
+          }
+          .trending-product-category {
+            font-size: 12px;
+            font-family: "Proxima Nova";
+            font-weight: 400;
+          }
+          .trending-product-price {
+            font-size: 21px;
+          }
+        }
+        .trending-product-close-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 16px;
+          height: 16px;
+          margin-right: 10px;
+          cursor: pointer;
+          img {
+            width: 8px;
+            height: 8px;
+          }
+        }
+        .cart-quantity {
+          display: block;
+          display: flex;
+          font-size: 20px;
+          justify-content: space-between;
+          h5 {
+            margin: 0;
+          }
+        }
+      }
+      margin-bottom: 40px;
+    }
+    .cart-total {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      h4 {
+        font-size: 21px;
+      }
+    }
+    .cart-checkout-link {
+      width: 100%;
+      .cart-checkout {
+        margin-top: 4px;
+        width: 100%;
+        min-height: 40px;
+        background-color: f.$orange;
+        border-radius: 10px;
+        font-family: "Brandon Grotesque";
+        color: white;
+        font-size: 21px;
+
+        transition: 0.1s all ease-in-out;
+      }
+      .cart-checkout:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.dnon {
+  display: none;
+}

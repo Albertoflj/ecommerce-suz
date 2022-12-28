@@ -1,0 +1,55 @@
+@import "../main-styles//mixins.scss";
+
+.add-to-cart-notification {
+  position: absolute;
+  left: -540%;
+  width: 100%;
+  width: 240px;
+  margin-top: 20px;
+  .add-to-cart-notification-body {
+    //   background-color: #5bf258;
+    position: relative;
+    max-width: 240px;
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 5px;
+    .notification-arrow {
+      background-color: inherit;
+      height: 14px;
+      width: 14px;
+      position: absolute;
+      top: -7px;
+      right: 20%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+    p {
+      font-size: 15px;
+      font-family: "Proxima Nova";
+    }
+  }
+}
+
+.successNotification {
+  background-color: #5bf258;
+}
+.errorNotification {
+  background-color: #ff3333;
+}
+.loadingNotification {
+  background-color: #f2b458;
+}
+
+@include breakpoint-down(large) {
+  .add-to-cart-notification {
+    left: -800%;
+    .add-to-cart-notification-body {
+      .notification-arrow {
+        right: 9%;
+      }
+    }
+  }
+}

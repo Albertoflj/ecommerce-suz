@@ -8,19 +8,44 @@ import heart from "../../Assets/icons/icons/heart.svg";
 import cart from "../../Assets/icons/icons/cart2.svg";
 // import Badge from "../Badge/Badge";
 import { Badge } from "@material-ui/core";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import AddToCartNotification from "../AddToCartNotification/AddToCartNotification";
+import { store } from "../../redux/store.js";
+import { getStatus } from "redux-resource";
+import Cart from "../Cart/Cart";
 
 const Header = () => {
+  // const state = store.getState();
+  // const cartRequestStatus = getStatus(
+  //   state,
+  //   "cartQuantity.cartQuantityReducer",
+  //   true
+  // );
+
+  const [cartCount, setCartCount] = useState(0);
+  const [cartDisplay, setCartDisplay] = useState("dnon");
+  const cartQty = useSelector((state) => state.cartQuantity.cartItemsQuantity);
+  useEffect(() => {
+    setCartCount(cartQty);
+    console.log("cart", cartQty);
+  }, [cartQty]);
   const [hamburgerMenu, setHamburgerMenu] = useState("hamburger-inactive");
   const [menuDisplay, setMenuDisplay] = useState("menu-inactive");
-  let [cartCount, setCartCount] = useState(1);
-
+  const cartItemsQuantity = useSelector((state) => state.cartQuantity);
   function handleFavorites() {
     //coode
     console.log("fav");
   }
   function handleCart() {
     //more coode
-    console.log("cart");
+    // console.log("cart");
+    // console.log(cartItemsQuantity);
+    if (cartDisplay === "dnon") {
+      setCartDisplay("");
+    } else {
+      setCartDisplay("dnon");
+    }
   }
   function handleHamburgerMenu() {
     if (hamburgerMenu === "hamburger-inactive") {
@@ -43,7 +68,7 @@ const Header = () => {
     <header className="padding">
       <button
         className={"hamburger-icon mobile " + hamburgerMenu}
-        onChange={() => handleHamburgerMenu()}
+        onClick={() => handleHamburgerMenu()}
       >
         <span></span>
         <span></span>
@@ -77,7 +102,7 @@ const Header = () => {
 
         <Badge badgeContent={0} color="secondary" overlap="rectangular">
           <button
-            onChange={() => {
+            onClick={() => {
               handleFavorites();
             }}
             className="fav desktop"
@@ -87,14 +112,16 @@ const Header = () => {
         </Badge>
         <Badge badgeContent={cartCount} color="secondary" overlap="rectangular">
           <button
-            onChange={() => {
+            onClick={() => {
               handleCart();
             }}
-            className="cart"
+            className="cart-icon"
           >
-            <img src={cart} alt="cart" className="cart" href="" />
+            <img src={cart} alt="cart" className="cart-icon" href="" />
+            <AddToCartNotification />
           </button>
         </Badge>
+        <Cart display={cartDisplay} />
       </div>
       <div className={menuDisplay + " padding"}>
         <div className="menu-contents">
@@ -118,7 +145,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Badge badgeContent={0} color="secondary" overlap="rectangular">
+              <Badge
+                // badgeContent={cartItemsQuantity}
+                color="secondary"
+                overlap="rectangular"
+              >
                 <button
                   onChange={() => {
                     handleFavorites();

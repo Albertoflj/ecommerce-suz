@@ -35,7 +35,7 @@ header {
   width: 100%;
 }
 
-.cart {
+.cart-icon {
   height: 30px;
   width: 30px;
 }
@@ -43,13 +43,13 @@ header {
   height: 30px;
   width: 24px;
 }
-.cart,
+.cart-icon,
 .fav,
 button {
   background-color: transparent;
   border: none;
 }
-.cart:hover,
+.cart-icon:hover,
 .fav:hover {
   cursor: pointer;
 }
@@ -183,10 +183,7 @@ button {
         height: 24px;
         width: 18px;
       }
-      .cart {
-        height: 24px;
-        width: 24px;
-      }
+
       max-width: 150px;
     }
   }

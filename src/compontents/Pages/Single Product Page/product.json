@@ -1,5 +1,5 @@
 {
-  "id": "prod_ypbroEyyM1o8n4",
+  "id": "id",
   "created": 1669104344,
   "updated": 1671313359,
   "active": true,
@@ -51,19 +51,19 @@
     "extra_fields": false
   },
   "checkout_url": {
-    "checkout": "https://checkout.chec.io/Isf7ZZ?checkout=true",
-    "display": "https://checkout.chec.io/Isf7ZZ"
+    "checkout": "checkout",
+    "display": "display"
   },
   "categories": [
     {
-      "id": "cat_N7GKwbrbNw3EX4",
+      "id": "id",
       "slug": "mens-collection",
       "name": "Mens Collection"
     }
   ],
   "image": {
-    "id": "ast_8XO3wpQvWNoYAz",
-    "url": "https://cdn.chec.io/merchants/48662/assets/7ZdSGWoMI13aTjWE|af1l.png",
+    "id": "id",
+    "url": "url",
     "description": null,
     "is_image": true,
     "filename": "af1l.png",

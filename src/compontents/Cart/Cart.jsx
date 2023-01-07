@@ -17,7 +17,6 @@ const Cart = (props) => {
   useEffect(() => {
     setLoading(true);
     // console.log("lineItems", lineItems);\
-    console.log("woooooooooooooooooooooo");
     // console.log(lineItems[0].quantity);
     getCart();
   }, [cartQuantity]);
@@ -33,6 +32,7 @@ const Cart = (props) => {
   }
 
   return (
+   <>
     <div className={`cart ${props.display}`}>
       {loading ? (
         <div className="cart">
@@ -40,7 +40,6 @@ const Cart = (props) => {
             <h3 className="cart-title">Cart</h3>
             <div className="cart-items">
               {lineItems.map((product) => {
-                // console.log("product", product);
                 return (
                   <ProductCard
                     product={product}
@@ -53,9 +52,6 @@ const Cart = (props) => {
             </div>
             <div className="cart-total">
               <h4 className="cart-total-name">Total:</h4>
-              {/* 
-                //! TODO: Add total price
-                 */}
               <h4 className="cart-total-price">{cartTotal}</h4>
             </div>
             <button className="cart-checkout">Checkout</button>
@@ -84,9 +80,6 @@ const Cart = (props) => {
             </div>
             <div className="cart-total">
               <h4 className="cart-total-name">Total:</h4>
-              {/* 
-                  //! TODO: Add total price
-                   */}
               <h4 className="cart-total-price">{cartTotal}</h4>
             </div>
             <Link to="/checkout" className="cart-checkout-link">
@@ -96,6 +89,8 @@ const Cart = (props) => {
         </div>
       )}
     </div>
+  
+    </>
   );
 };
 

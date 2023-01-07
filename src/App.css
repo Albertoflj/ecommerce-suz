@@ -5,3 +5,7 @@ button {
   padding: 0;
   cursor: pointer;
 }
+
+body{
+  overflow-x: hidden;
+}

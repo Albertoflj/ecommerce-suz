@@ -52,7 +52,7 @@ const SingleProductPage = (props) => {
   const addToCart = async (productId, quantity) => {
     await commerce.cart
       .add(productId, quantity)
-      .then((response) => console.log("response", response));
+      // .then((response) => console.log("response", response));
 
     const getCartItemsAction = dispatch(getCartItems());
 
@@ -72,8 +72,10 @@ const SingleProductPage = (props) => {
     //empty cart
     // commerce.cart.empty().then((response) => console.log(response));
   };
-  const handleAddToFavorites = () => {
+
+  const addToFavorites = () => {
     localStorage.setItem("suz-favorites", JSON.stringify(product));
+
   };
   useEffect(() => {
     fetchVariants();
@@ -129,8 +131,8 @@ const SingleProductPage = (props) => {
                       className="add-to-cart"
                       onClick={() => {
                         isSizeSelected
-                          ? addToCart(product.id, quantityRef.current.value) &&
-                            console.log(variants)
+                          ? addToCart(product.id, quantityRef.current.value)
+                            // console.log(variants)
                           : alert("Please select a size");
                       }}
                     >
@@ -149,7 +151,7 @@ const SingleProductPage = (props) => {
                     <div className="space"></div>
                     <button
                       className="add-to-favorites"
-                      onClick={() => handleAddToFavorites()}
+                      onClick={() => addToFavorites()}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

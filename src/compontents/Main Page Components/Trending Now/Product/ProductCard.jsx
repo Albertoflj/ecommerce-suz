@@ -8,6 +8,7 @@ const ProductCard = (props) => {
   const [product, setProduct] = useState(props.product);
   const [productCategory, setProductCategory] = useState("");
   const [isCart, setIsCart] = useState(false);
+  const [isFavorites, setIsFavorites] = useState(false);
 
   async function getProductCategory() {
     const prodCategory = await commerce.products.retrieve(product.product_id);
@@ -25,12 +26,18 @@ const ProductCard = (props) => {
           })
       : console.log("no cart");
   }
-
+  function removeProductFromFavorites() {
+  }
   useEffect(() => {
     if (props.for === "cart") {
       getProductCategory();
       setIsCart(true);
-    } else {
+    } 
+    else if(props.for === "favorites"){
+      getProductCategory();
+      setIsFavorites(true);
+      }
+    else {
       setProductCategory(product.categories[0].name);
     }
   }, []);
@@ -62,7 +69,12 @@ const ProductCard = (props) => {
       <div
         className="trending-product-close-icon"
         onClick={() => {
-          removeProductFromCart(isCart);
+          if(isCart){
+            removeProductFromCart(true);
+          }
+          else if(isFavorites){
+            removeProductFromFavorites();
+          }
         }}
       >
         <img src={CloseIcon} alt="closeicon" />

@@ -62,6 +62,8 @@ const Header = () => {
     document.body.style.overflow = "auto";
     setMenuDisplay("menu-inactive");
   }
+  
+
 
   return (
     <header className="padding">
@@ -119,8 +121,9 @@ const Header = () => {
             <img src={cart} alt="cart" className="cart-icon" href="" />
             <AddToCartNotification />
           </button>
+            <Cart display={cartDisplay} onCancel={handleCart}/>
+            <div className={`cart-backdrop ${cartDisplay}`} onClick={handleCart}></div>
         </Badge>
-        <Cart display={cartDisplay} />
       </div>
       <div className={menuDisplay + " padding"}>
         <div className="menu-contents">

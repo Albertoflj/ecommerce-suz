@@ -15,6 +15,7 @@ import { getCartItems } from "./redux/cartQuantitySlice";
 import { useDispatch } from "react-redux";
 import AddToCartNotification from "./compontents/AddToCartNotification/AddToCartNotification";
 import Cart from "./compontents/Cart/Cart";
+import Favorites from "./compontents/Favorites/Favorites";
 
 function App() {
   const dispatch = useDispatch();
@@ -50,6 +51,8 @@ function App() {
               element={<ProductsPage products={products} category="w" />}
             />
             <Route path="/filter" element={<Filter />} />
+            <Route path="/sort" element={<Filter />} />
+
             {/* <Route path="/product/AF1L" element={<Filter />} />*/}
             <Route path="/product/pr" element={<PriceRange />} />
             {products.map((product) => {
@@ -63,7 +66,7 @@ function App() {
               );
             })}
             <Route path="/notification" element={<AddToCartNotification />} />
-            <Route path="/cart" element={<Cart products={products} />} />
+            <Route path="/favorites" element={<Favorites />} />
           </Routes>
         )}
       </div>

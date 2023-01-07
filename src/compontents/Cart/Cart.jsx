@@ -16,10 +16,10 @@ const Cart = (props) => {
 
   useEffect(() => {
     setLoading(true);
-    getCart();
     // console.log("lineItems", lineItems);\
     console.log("woooooooooooooooooooooo");
     // console.log(lineItems[0].quantity);
+    getCart();
   }, [cartQuantity]);
   async function getCart() {
     const cartId = await commerce.cart.id();
@@ -66,17 +66,21 @@ const Cart = (props) => {
           <div className="cart-container">
             <h3 className="cart-title">Cart</h3>
             <div className="cart-items">
-              {lineItems.map((product) => {
-                // console.log("product", product);
-                return (
-                  <ProductCard
-                    product={product}
-                    quantity={product.quantity}
-                    className="product-list-item  "
-                    for="cart"
-                  />
-                );
-              })}
+              {lineItems.length === 0 ? (
+                <h3 className="cart-empty">Your cart is empty</h3>
+              ) : (
+                lineItems.map((product) => {
+                  // console.log("product", product);
+                  return (
+                    <ProductCard
+                      product={product}
+                      quantity={product.quantity}
+                      className="product-list-item  "
+                      for="cart"
+                    />
+                  );
+                })
+              )}
             </div>
             <div className="cart-total">
               <h4 className="cart-total-name">Total:</h4>

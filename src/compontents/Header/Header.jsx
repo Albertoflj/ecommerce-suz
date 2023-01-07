@@ -28,7 +28,6 @@ const Header = () => {
   const cartQty = useSelector((state) => state.cartQuantity.cartItemsQuantity);
   useEffect(() => {
     setCartCount(cartQty);
-    console.log("cart", cartQty);
   }, [cartQty]);
   const [hamburgerMenu, setHamburgerMenu] = useState("hamburger-inactive");
   const [menuDisplay, setMenuDisplay] = useState("menu-inactive");

@@ -16,6 +16,11 @@ const SingleProductPage = (props) => {
   const [loading, setLoading] = useState(true);
   const [response, setResponse] = useState();
   const quantityRef = useRef();
+  const [isSizeSelected, setIsSizeSelected] = useState(false);
+  const [favoritesArray, setFavoritesArray] = useState([]);
+  const selectSize = (size) => {
+    setIsSizeSelected(size);
+  };
   // const state = store.getState();
 
   // console.log("cartRequestStatus", cartRequestStatus);
@@ -67,10 +72,15 @@ const SingleProductPage = (props) => {
     //empty cart
     // commerce.cart.empty().then((response) => console.log(response));
   };
+  const handleAddToFavorites = () => {
+    localStorage.setItem("suz-favorites", JSON.stringify(product));
+  };
   useEffect(() => {
     fetchVariants();
+    localStorage.getItem("suz-favorites")
+      ? setFavoritesArray(JSON.parse(localStorage.getItem("suz-favorites")))
+      : setFavoritesArray([]);
   }, []);
-  //! ONLY ADD TO CART WHEN SIZE IS SELECTED
   return (
     <>
       {loading ? (
@@ -101,6 +111,7 @@ const SingleProductPage = (props) => {
                       for="product"
                       category={product.categories[0].name}
                       variants={variants}
+                      isSizeSelected={selectSize}
                     />
                   </div>
                   <div className="quantity">
@@ -117,7 +128,10 @@ const SingleProductPage = (props) => {
                     <button
                       className="add-to-cart"
                       onClick={() => {
-                        addToCart(product.id, quantityRef.current.value);
+                        isSizeSelected
+                          ? addToCart(product.id, quantityRef.current.value) &&
+                            console.log(variants)
+                          : alert("Please select a size");
                       }}
                     >
                       <svg
@@ -133,7 +147,10 @@ const SingleProductPage = (props) => {
                       </svg>
                     </button>
                     <div className="space"></div>
-                    <button className="add-to-favorites">
+                    <button
+                      className="add-to-favorites"
+                      onClick={() => handleAddToFavorites()}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"

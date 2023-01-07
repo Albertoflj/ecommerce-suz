@@ -21,7 +21,7 @@
     h3 {
       font-size: 21px;
       margin: 0;
-      cursor: pointer;
+      cursor: default;
     }
     h6 {
       margin: 0;
@@ -33,6 +33,12 @@
     }
     .trending-product-card:not(:first-child) {
       margin-top: 18px;
+    }
+    .cart-empty {
+      text-align: center;
+      color: f.$black50;
+      font-family: "Proxima Nova";
+      cursor: default;
     }
     .cart-items {
       display: flex;

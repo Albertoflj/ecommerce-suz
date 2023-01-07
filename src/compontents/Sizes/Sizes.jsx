@@ -19,6 +19,7 @@ const Sizes = (props) => {
   if (props.for === "product") {
     function onSelectedSize(buttonValue) {
       setSelectedSize(buttonValue);
+      props.isSizeSelected(true);
     }
     return (
       <div className="filter-sizes product-size">

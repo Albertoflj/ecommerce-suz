@@ -8,6 +8,7 @@ const ProductCard = (props) => {
   const [product, setProduct] = useState(props.product);
   const [productCategory, setProductCategory] = useState("");
   const [isCart, setIsCart] = useState(false);
+
   async function getProductCategory() {
     const prodCategory = await commerce.products.retrieve(product.product_id);
     setProductCategory(prodCategory.categories[0].name);

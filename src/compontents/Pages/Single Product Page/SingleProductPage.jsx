@@ -18,13 +18,19 @@ const SingleProductPage = (props) => {
   const quantityRef = useRef();
   const [isSizeSelected, setIsSizeSelected] = useState(false);
   const [favoritesArray, setFavoritesArray] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
   const selectSize = (size) => {
     setIsSizeSelected(size);
   };
   // const state = store.getState();
 
   // console.log("cartRequestStatus", cartRequestStatus);
-
+  useEffect(() => {
+    fetchVariants();
+    localStorage.getItem("suz-favorites") &&
+      setFavoritesArray(JSON.parse(localStorage.getItem("suz-favorites")));
+    console.log("favoritesArray", favoritesArray);
+  }, []);
   const url = new URL(
     `https://api.chec.io/v1/products/${product.id}/variant_groups/`
   );
@@ -50,9 +56,8 @@ const SingleProductPage = (props) => {
   };
   const dispatch = useDispatch();
   const addToCart = async (productId, quantity) => {
-    await commerce.cart
-      .add(productId, quantity)
-      // .then((response) => console.log("response", response));
+    await commerce.cart.add(productId, quantity);
+    // .then((response) => console.log("response", response));
 
     const getCartItemsAction = dispatch(getCartItems());
 
@@ -73,16 +78,12 @@ const SingleProductPage = (props) => {
     // commerce.cart.empty().then((response) => console.log(response));
   };
 
-  const addToFavorites = () => {
-    localStorage.setItem("suz-favorites", JSON.stringify(product));
-
+  const handleFavorites = () => {
+    if (isFavorite) {
+    } else {
+    }
   };
-  useEffect(() => {
-    fetchVariants();
-    localStorage.getItem("suz-favorites")
-      ? setFavoritesArray(JSON.parse(localStorage.getItem("suz-favorites")))
-      : setFavoritesArray([]);
-  }, []);
+
   return (
     <>
       {loading ? (
@@ -110,6 +111,7 @@ const SingleProductPage = (props) => {
                 //!!SHOULD BE A SEPARATE COMPONENT
                 */}
                     <Sizes
+                      key={"sizesProduct"}
                       for="product"
                       category={product.categories[0].name}
                       variants={variants}
@@ -132,8 +134,8 @@ const SingleProductPage = (props) => {
                       onClick={() => {
                         isSizeSelected
                           ? addToCart(product.id, quantityRef.current.value)
-                            // console.log(variants)
-                          : alert("Please select a size");
+                          : // console.log(variants)
+                            alert("Please select a size");
                       }}
                     >
                       <svg
@@ -151,18 +153,34 @@ const SingleProductPage = (props) => {
                     <div className="space"></div>
                     <button
                       className="add-to-favorites"
-                      onClick={() => addToFavorites()}
+                      onClick={() => handleFavorites()}
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
-                        fill="currentColor"
-                        className="bi bi-heart"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
-                      </svg>
+                      {isFavorite ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          fill="currentColor"
+                          class="bi bi-heart-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          fill="currentColor"
+                          className="bi bi-heart"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                        </svg>
+                      )}
                     </button>
                   </div>
                 </div>

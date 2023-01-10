@@ -26,21 +26,19 @@ const ProductCard = (props) => {
           })
       : console.log("no cart");
   }
-  function removeProductFromFavorites() {
-  }
+  function removeProductFromFavorites() {}
   useEffect(() => {
+    setProduct(props.product);
     if (props.for === "cart") {
       getProductCategory();
       setIsCart(true);
-    } 
-    else if(props.for === "favorites"){
+    } else if (props.for === "favorites") {
       getProductCategory();
       setIsFavorites(true);
-      }
-    else {
+    } else {
       setProductCategory(product.categories[0].name);
     }
-  }, []);
+  }, [product]);
 
   return (
     <div className="trending-product-card">
@@ -69,10 +67,9 @@ const ProductCard = (props) => {
       <div
         className="trending-product-close-icon"
         onClick={() => {
-          if(isCart){
+          if (isCart) {
             removeProductFromCart(true);
-          }
-          else if(isFavorites){
+          } else if (isFavorites) {
             removeProductFromFavorites();
           }
         }}

@@ -27,46 +27,19 @@ const Cart = (props) => {
     const cartItems = cart.line_items;
     setLineItems(cartItems);
     setCartTotal(cartQuantity);
-    console.log("lineItems", lineItems);
+    // console.log("lineItems", lineItems);
     setLoading(false);
   }
 
   return (
-   <>
-    <div className={`cart ${props.display}`}>
-      {loading ? (
-        <div className="cart">
-          <div className="cart-container">
-            <h3 className="cart-title">Cart</h3>
-            <div className="cart-items">
-              {lineItems.map((product) => {
-                return (
-                  <ProductCard
-                    product={product}
-                    quantity={product.quantity}
-                    className="product-list-item  "
-                    for="cart"
-                  />
-                );
-              })}
-            </div>
-            <div className="cart-total">
-              <h4 className="cart-total-name">Total:</h4>
-              <h4 className="cart-total-price">{cartTotal}</h4>
-            </div>
-            <button className="cart-checkout">Checkout</button>
-          </div>
-        </div>
-      ) : (
-        <div className="cart">
-          <div className="cart-container">
-            <h3 className="cart-title">Cart</h3>
-            <div className="cart-items">
-              {lineItems.length === 0 ? (
-                <h3 className="cart-empty">Your cart is empty</h3>
-              ) : (
-                lineItems.map((product) => {
-                  // console.log("product", product);
+    <>
+      <div className={`cart ${props.display}`}>
+        {loading ? (
+          <div className="cart">
+            <div className="cart-container">
+              <h3 className="cart-title">Cart</h3>
+              <div className="cart-items">
+                {lineItems.map((product) => {
                   return (
                     <ProductCard
                       product={product}
@@ -75,21 +48,47 @@ const Cart = (props) => {
                       for="cart"
                     />
                   );
-                })
-              )}
-            </div>
-            <div className="cart-total">
-              <h4 className="cart-total-name">Total:</h4>
-              <h4 className="cart-total-price">{cartTotal}</h4>
-            </div>
-            <Link to="/checkout" className="cart-checkout-link">
+                })}
+              </div>
+              <div className="cart-total">
+                <h4 className="cart-total-name">Total:</h4>
+                <h4 className="cart-total-price">{cartTotal}</h4>
+              </div>
               <button className="cart-checkout">Checkout</button>
-            </Link>
+            </div>
           </div>
-        </div>
-      )}
-    </div>
-  
+        ) : (
+          <div className="cart">
+            <div className="cart-container">
+              <h3 className="cart-title">Cart</h3>
+              <div className="cart-items">
+                {lineItems.length === 0 ? (
+                  <h3 className="cart-empty">Your cart is empty</h3>
+                ) : (
+                  lineItems.map((product) => {
+                    // console.log("product", product);
+                    return (
+                      <ProductCard
+                        product={product}
+                        quantity={product.quantity}
+                        className="product-list-item  "
+                        for="cart"
+                      />
+                    );
+                  })
+                )}
+              </div>
+              <div className="cart-total">
+                <h4 className="cart-total-name">Total:</h4>
+                <h4 className="cart-total-price">{cartTotal}</h4>
+              </div>
+              <Link to="/checkout" className="cart-checkout-link">
+                <button className="cart-checkout">Checkout</button>
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
     </>
   );
 };

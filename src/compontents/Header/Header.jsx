@@ -14,6 +14,7 @@ import AddToCartNotification from "../AddToCartNotification/AddToCartNotificatio
 import { store } from "../../redux/store.js";
 import { getStatus } from "redux-resource";
 import Cart from "../Cart/Cart";
+import Sort from "../Sort/Sort";
 
 const Header = () => {
   // const state = store.getState();
@@ -62,8 +63,6 @@ const Header = () => {
     document.body.style.overflow = "auto";
     setMenuDisplay("menu-inactive");
   }
-  
-
 
   return (
     <header className="padding">
@@ -121,8 +120,11 @@ const Header = () => {
             <img src={cart} alt="cart" className="cart-icon" href="" />
             <AddToCartNotification />
           </button>
-            <Cart display={cartDisplay} onCancel={handleCart}/>
-            <div className={`cart-backdrop ${cartDisplay}`} onClick={handleCart}></div>
+          <Cart display={cartDisplay} onCancel={handleCart} />
+          <div
+            className={`cart-backdrop ${cartDisplay}`}
+            onClick={handleCart}
+          ></div>
         </Badge>
       </div>
       <div className={menuDisplay + " padding"}>

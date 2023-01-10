@@ -5,9 +5,7 @@ const Favorites = () => {
     <div className="cart">
       <div className="cart-container">
         <h3 className="cart-title">Favorites</h3>
-        <div className="cart-items">
-          <h3 className="cart-empty">No favorites.</h3>
-        </div>
+        <div className="cart-items"></div>
       </div>
     </div>
   );

@@ -1,0 +1,37 @@
+.sort {
+  padding: 16px;
+  border-radius: 20px;
+  width: 110px;
+  background-color: white;
+  z-index: 1000;
+  top: 22%;
+  right: 5%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  .sort-container {
+    .sort-title {
+      font-size: 21px;
+      margin: 0;
+      margin-bottom: 12px;
+    }
+    .sort-variations {
+      p {
+        font-family: "Proxima Nova";
+        font-size: 12px;
+        margin: 0;
+      }
+    }
+    .name-variation,
+    .price-variation {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .price-variation {
+      margin-top: 8px;
+    }
+  }
+}

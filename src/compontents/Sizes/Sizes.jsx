@@ -23,17 +23,14 @@ const Sizes = (props) => {
     }
     return (
       <div className="filter-sizes product-size">
-        {/* 
-        //!!SHOULD VARY FOR MEN AND WOMEN, IF WOMEN, MAKE SIZES SMALLER, IF MEN, LEAVE THEM AS THEY ARE. THEY SHOULD BE MAPPED FROM EACH PRODUCT
-        */}
         <div className="filter-sizes-checkboxes product-sizes-checkboxes">
           {variants.map((variant) => {
             let variantSize = variant.name;
-            // console.log(variant);
             return (
               <input
                 type="checkbox"
                 name={`size-${variantSize}`}
+                key={`size${variantSize}`}
                 id={`size${variantSize}`}
                 className="filter-sizes-checkbox product-size-checkbox"
                 value={`${variantSize}`}
@@ -41,7 +38,6 @@ const Sizes = (props) => {
                 onChange={(e) => {
                   onSelectedSize(e.target.value);
                 }}
-                // disabled={variant.inventory > 0 ? false : true}
               />
             );
           })}

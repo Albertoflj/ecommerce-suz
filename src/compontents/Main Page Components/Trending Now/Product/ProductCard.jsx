@@ -48,9 +48,13 @@ const ProductCard = (props) => {
         className="trending-product-image"
       />
       <div className="trending-product-text">
-        <Link to={`/product/${product.sku}`}>
+        {isCart || isFavorites ? (
+          <Link to={`/product/${product.sku}`}>
+            <h3 className="trending-product-title">{product.name}</h3>
+          </Link>
+        ) : (
           <h3 className="trending-product-title">{product.name}</h3>
-        </Link>
+        )}
 
         <h6 className="trending-product-category">{productCategory}</h6>
         <div className="cart-quantity">

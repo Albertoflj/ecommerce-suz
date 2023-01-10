@@ -7,13 +7,13 @@
   align-items: flex-end;
   .options-bar-content {
     max-width: 1218;
-    button,
-    img {
+    .bar-button,
+    .bar-icon {
       cursor: pointer;
       width: 32px;
       height: 32px;
     }
-    button {
+    .bar-button {
       margin-bottom: 10px;
       padding: 0;
     }

@@ -6,9 +6,10 @@ import { setSort } from "../../redux/sortSlice";
 const Sort = () => {
   const [isSortActivated, setIsSortActivated] = useState(false);
   const [nameSortType, setNameSortType] = useState("Z-A");
-  const [priceSortType, setPriceSortType] = useState("down");
+  const [priceSortType, setPriceSortType] = useState("price-high");
   const dispatch = useDispatch();
   const handleNameSort = () => {
+    setPriceSortType("price-high");
     // setIsSortActivated(true);
     if (nameSortType === "A-Z") {
       setNameSortType("Z-A");
@@ -21,14 +22,15 @@ const Sort = () => {
     }
   };
   const handlePriceSort = () => {
+    setNameSortType("Z-A");
     // console.log("handlePriceSort");
     // setIsSortActivated(true);
-    if (priceSortType === "up") {
-      setPriceSortType("down");
+    if (priceSortType === "price-high") {
+      setPriceSortType("price-low");
       dispatch(setSort(priceSortType));
       console.log(priceSortType);
-    } else if (priceSortType === "down") {
-      setPriceSortType("up");
+    } else if (priceSortType === "price-low") {
+      setPriceSortType("price-high");
       dispatch(setSort(priceSortType));
       console.log(priceSortType);
     }
@@ -79,7 +81,7 @@ const Sort = () => {
             }}
           >
             {/* svg */}
-            {priceSortType === "up" ? (
+            {priceSortType === "price-high" ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

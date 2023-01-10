@@ -3,10 +3,13 @@
   //   border: 1px blue solid;
 }
 .filter-menu {
+  position: absolute;
+  background-color: white;
+  top: 200px;
   box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
   overflow: hidden;
   //   background-color: red;
-  min-height: 480px;
+  min-height: 410px;
   max-width: 380px;
   width: 100%;
   border-radius: 5px;
@@ -57,6 +60,8 @@
   align-items: center;
   label {
     margin-left: 8px;
+    //make text unselectable
+    user-select: none;
   }
 
   //modify the checkbox for firefox
@@ -65,6 +70,18 @@
     -webkit-appearance: none;
     appearance: none;
     border: 1px solid f.$black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    outline: none;
+    transition: all 0.1s ease-in-out;
+  }
+  input[type="checkbox"]:checked {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid f.$orange;
+    background-color: f.$orange;
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -153,7 +170,7 @@
   }
 }
 .filter-buttons {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 32px;
   width: 100%;
   button {
@@ -170,5 +187,21 @@
     transition: all 0.1s ease-in-out;
 
     opacity: 0.8;
+  }
+}
+
+.filter-price {
+  display: flex;
+  flex-direction: column;
+  .filter-price-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .filter-price-control-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

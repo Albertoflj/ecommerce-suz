@@ -51,22 +51,23 @@ function App() {
               path="/women"
               element={<ProductsPage products={products} category="w" />}
             />
-            <Route path="/filter" element={<Filter />} />
-            <Route path="/sort" element={<Sort />} />
+            {/* <Route path="/filter" element={<Filter />} />
+            <Route path="/sort" element={<Sort />} /> */}
 
             {/* <Route path="/product/AF1L" element={<Filter />} />*/}
-            <Route path="/product/pr" element={<PriceRange />} />
+            {/* <Route path="/pr" element={<PriceRange />} /> */}
             {products.map((product) => {
               return (
                 <Route
                   path={`/product/${product.sku}`}
+                  key={product.id}
                   element={
                     <SingleProductPage product={product} key={product.id} />
                   }
                 />
               );
             })}
-            <Route path="/notification" element={<AddToCartNotification />} />
+            {/* <Route path="/notification" element={<AddToCartNotification />} /> */}
             <Route path="/favorites" element={<Favorites />} />
           </Routes>
         )}

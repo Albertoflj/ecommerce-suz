@@ -1,10 +1,12 @@
 .sort {
   padding: 16px;
+  box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
+
   border-radius: 20px;
   width: 110px;
   background-color: white;
   z-index: 1000;
-  top: 22%;
+  top: 200px;
   right: 5%;
   display: flex;
   justify-content: center;

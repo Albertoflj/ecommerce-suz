@@ -41,7 +41,15 @@ const TrendingProducts = (props) => {
   };
 
   const handleRightClick = () => {
-    xPos - 260 < -carouselWidth ? setXPos(-carouselWidth) : setXPos(xPos - 260);
+    if (xPos === -carouselWidth) {
+      setXPos(0);
+    } else if (xPos - 260 < -carouselWidth) {
+      setXPos(-carouselWidth);
+    } else {
+      setXPos(xPos - 260);
+    }
+
+    console.log(xPos);
   };
 
   useEffect(() => {

@@ -1,4 +1,5 @@
 @use "../../main-styles/fonts/fonts.scss" as f;
+@import "../../main-styles/mixins.scss";
 
 .checkout-page-section-title {
   font-size: 40px;
@@ -7,6 +8,7 @@
   font-weight: lighter;
   color: f.$black;
   margin-top: 40px;
+  text-align: center;
 }
 .my-cart {
   display: flex;
@@ -14,34 +16,42 @@
   flex-direction: column;
   align-items: center;
   .checkout-cart {
+    box-sizing: border-box;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     font-family: "Proxima Nova";
     font-weight: lighter;
-    min-height: 680px;
+    max-height: 680px;
     background-color: f.$orange50;
     border-radius: 10px;
-    max-width: 520px;
+    max-width: 620px;
     width: 100%;
     margin-top: 50px;
+    padding: 10px;
+    overflow: hidden;
     h5 {
       font-family: "Proxima Nova";
       font-weight: lighter;
       font-size: 32px;
     }
     .checkout-cart-products {
-      max-height: 400px;
+      max-height: 500px;
       overflow-y: scroll;
-      padding-top: 200px;
+      // padding-top: 200px;
       width: 100%;
       display: flex;
+      overflow-x: hidden;
       flex-direction: column;
-      justify-content: center;
+      // justify-content: center;
       align-items: center;
       .trending-product-card:not(:first-child) {
         margin-top: 18px;
+      }
+      .cart-empty {
+        color: white;
       }
 
       .trending-product-card {
@@ -50,9 +60,11 @@
         border-radius: 10px;
         // border: 1px solid black;
         justify-content: space-between;
+        box-sizing: border-box;
         align-items: center;
         height: 182px;
-        max-width: 462px;
+
+        margin: auto;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -163,4 +175,69 @@
 }
 .optional {
   color: f.$black25;
+}
+
+@include breakpoint-down(large) {
+  .my-cart {
+    .checkout-cart {
+      h5 {
+        font-family: "Proxima Nova";
+        font-weight: lighter;
+        font-size: 22px;
+      }
+      .checkout-cart-products {
+        max-height: 500px;
+        // padding-top: 120px;
+        overflow-x: hidden;
+        .trending-product-card:not(:first-child) {
+          margin-top: 18px;
+        }
+
+        .trending-product-card {
+          align-items: center;
+          height: 182px;
+          // max-width: 462px;
+
+          img {
+            width: 130px;
+            height: 130px;
+          }
+          .trending-product-text {
+            width: 100%;
+            .trending-product-title {
+              font-size: 24px;
+            }
+            .trending-product-category {
+              margin-top: 10px;
+              font-size: 18px;
+              font-family: "Proxima Nova";
+              font-weight: 400;
+            }
+            .trending-product-price {
+              margin-top: 25px;
+              font-size: 14px;
+            }
+            .cart-quantity {
+              display: flex;
+              h5 {
+                font-size: 18px;
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .shipping-details {
+    .input-first-and-last-name,
+    .input-city-and-zip {
+      flex-direction: column;
+    }
+    .input-div {
+      label {
+        font-size: 25px;
+      }
+    }
+  }
 }

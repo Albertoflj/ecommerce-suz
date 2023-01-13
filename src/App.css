@@ -16,4 +16,10 @@ button {
 
 body {
   overflow-x: hidden;
+  position: relative;
+}
+body::after {
+  content: "";
+  display: block;
+  height: 180px;
 }

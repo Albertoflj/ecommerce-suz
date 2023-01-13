@@ -10,7 +10,7 @@ import Footer from "../../Footer/Footer";
 const MainPage = (props) => {
   const scrollToCategories = () => {
     window.scrollTo({
-      top: 1000,
+      top: 700,
       behavior: "smooth",
     });
   };
@@ -35,14 +35,14 @@ const MainPage = (props) => {
             </div>
             <button
               className="shop-now shadow desktop-medium"
-              onChange={() => {
+              onClick={() => {
                 scrollToCategories();
               }}
             >
               Shop Now
             </button>
           </div>
-          <Slides products={props.products} scroll={scrollToCategories} />
+          <Slides products={props.products} />
         </section>
 
         <section className="categories-section">

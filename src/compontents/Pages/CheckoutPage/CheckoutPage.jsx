@@ -54,77 +54,81 @@ const CheckoutPage = () => {
         <div className="checkout-cart">
           <div className="checkout-cart-products">
             {loading ? (
-              <>Loading</>
-            ) : (
+              <>loading</>
+            ) : lineItems && lineItems.length ? (
               lineItems.map((product) => {
                 return (
                   <ProductCard product={product} for="cart" key={product.id} />
                 );
               })
+            ) : (
+              <h1 className="cart-empty">Cart empty.</h1>
             )}
           </div>
           <h5 className="checkout-cart-total">{`Total: ${cartTotal}`}</h5>
         </div>
       </section>
-      <section className="shipping-details padding">
-        <h3 className="checkout-page-section-title">Shipping details</h3>
+      {lineItems && lineItems.length ? (
+        <section className="shipping-details padding">
+          <h3 className="checkout-page-section-title">Shipping details</h3>
 
-        <form onSubmit={handleSubmit}>
-          <div className="shipping-form">
-            <div className="input-first-and-last-name">
-              <div className="input-first-name input-div">
-                <label htmlFor="first-name">First Name</label>
-                <input required minLength={3} type="text" id="first-name" />
+          <form onSubmit={handleSubmit}>
+            <div className="shipping-form">
+              <div className="input-first-and-last-name">
+                <div className="input-first-name input-div">
+                  <label htmlFor="first-name">First Name</label>
+                  <input required minLength={3} type="text" id="first-name" />
+                </div>
+                <div className="input-last-name input-div">
+                  <label htmlFor="last-name">Last Name</label>
+                  <input required type="text" id="last-name" />
+                </div>
               </div>
-              <div className="input-last-name input-div">
-                <label htmlFor="last-name">Last Name</label>
-                <input required type="text" id="last-name" />
+              <div className="input-email input-div">
+                <label htmlFor="email">Email</label>
+                <input required ref={emailRef} type="text" id="email" />
+              </div>
+              <div className="input-country input-div">
+                <label htmlFor="country">Country</label>
+                <input required minLength={3} type="text" id="country" />
+              </div>
+              <div className="input-city-and-zip">
+                <div className="input-city input-div">
+                  <label htmlFor="city">City</label>
+                  <input required minLength={3} type="text" id="city" />
+                </div>
+                <div className="input-zip-code input-div">
+                  <label htmlFor="zip-code">Zip Code</label>
+                  <input
+                    required
+                    minLength={6}
+                    maxLength={6}
+                    type="number"
+                    id="zip-code"
+                  />
+                </div>
+              </div>
+              <div className="input-address input-div">
+                <label htmlFor="address">Shipping Address</label>
+                <input minLength={3} type="text" id="address" />
+              </div>
+              <div className="input-apt input-div">
+                <div className="labels">
+                  <label htmlFor="apt-suite-other">Apt / Suite / Other</label>
+                  <label htmlFor="apt-suite-other" className="optional">
+                    {" "}
+                    (optional)
+                  </label>
+                </div>
+                <input type="text" id="apt-suite-other" />
               </div>
             </div>
-            <div className="input-email input-div">
-              <label htmlFor="email">Email</label>
-              <input required ref={emailRef} type="text" id="email" />
-            </div>
-            <div className="input-country input-div">
-              <label htmlFor="country">Country</label>
-              <input required minLength={3} type="text" id="country" />
-            </div>
-            <div className="input-city-and-zip">
-              <div className="input-city input-div">
-                <label htmlFor="city">City</label>
-                <input required minLength={3} type="text" id="city" />
-              </div>
-              <div className="input-zip-code input-div">
-                <label htmlFor="zip-code">Zip Code</label>
-                <input
-                  required
-                  minLength={6}
-                  maxLength={6}
-                  type="number"
-                  id="zip-code"
-                />
-              </div>
-            </div>
-            <div className="input-address input-div">
-              <label htmlFor="address">Shipping Address</label>
-              <input minLength={3} type="text" id="address" />
-            </div>
-            <div className="input-apt input-div">
-              <div className="labels">
-                <label htmlFor="apt-suite-other">Apt / Suite / Other</label>
-                <label htmlFor="apt-suite-other" className="optional">
-                  {" "}
-                  (optional)
-                </label>
-              </div>
-              <input type="text" id="apt-suite-other" />
-            </div>
-          </div>
-          <button className="continue-button" type="submit">
-            Continue
-          </button>
-        </form>
-      </section>
+            <button className="continue-button" type="submit">
+              Continue
+            </button>
+          </form>
+        </section>
+      ) : null}
       {/* <button className="continue-button">Continue</button> */}
 
       <Footer />

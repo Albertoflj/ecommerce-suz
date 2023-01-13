@@ -18,6 +18,7 @@ import Cart from "./compontents/Cart/Cart";
 import Favorites from "./compontents/Favorites/Favorites";
 import Sort from "./compontents/Sort/Sort";
 import CheckoutPage from "./compontents/Pages/CheckoutPage/CheckoutPage";
+import Loader from "./compontents/Loader/Loader";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ function App() {
     <Router>
       <div className="App">
         {isLoading ? (
-          <h1>Loading...</h1>
+          <Loader />
         ) : (
           <Routes>
             <Route path="/" element={<MainPage products={products} />} />

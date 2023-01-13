@@ -31,7 +31,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 212px;
+  max-width: 140px;
   width: 100%;
 }
 
@@ -89,6 +89,25 @@ button {
     background-color: black;
   }
 }
+.hamburger-active {
+  span {
+    display: none;
+  }
+  img {
+    display: block;
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+  }
+}
+.hamburger-inactive {
+  span {
+    display: block;
+  }
+  img {
+    display: none;
+  }
+}
 .menu-inactive {
   display: none;
 }
@@ -98,7 +117,7 @@ button {
   background-color: black;
   width: 100%;
   min-height: 120vh;
-  bottom: 0;
+  top: 0;
   left: 0;
   z-index: 55;
   animation: moveRight 400ms ease-in-out;

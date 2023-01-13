@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 // import { AppBar, Toolbar, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
 import "../Header/header.scss";
+import CloseIcon from "../../Assets/icons/icons/close-icon.png";
+
 //icons
 import heart from "../../Assets/icons/icons/heart.svg";
 import cart from "../../Assets/icons/icons/cart2.svg";
@@ -73,6 +75,7 @@ const Header = () => {
         <span></span>
         <span></span>
         <span></span>
+        <img src={CloseIcon} alt="close-icon" />
       </button>
       <Link to="/" className="logo">
         Șuz
@@ -100,7 +103,7 @@ const Header = () => {
         //!CHANGE COLOR OF BADGE TO ORANGE
         */}
 
-        <Badge badgeContent={0} color="secondary" overlap="rectangular">
+        {/* <Badge badgeContent={0} color="secondary" overlap="rectangular">
           <button
             onClick={() => {
               handleFavorites();
@@ -109,7 +112,7 @@ const Header = () => {
           >
             <img src={heart} alt="heart" className="fav" href="" />
           </button>
-        </Badge>
+        </Badge> */}
         <Badge badgeContent={cartCount} color="secondary" overlap="rectangular">
           <button
             onClick={() => {
@@ -118,7 +121,7 @@ const Header = () => {
             className="cart-icon"
           >
             <img src={cart} alt="cart" className="cart-icon" href="" />
-            <AddToCartNotification />
+            {/* <AddToCartNotification /> */}
           </button>
           <Cart display={cartDisplay} onCancel={handleCart} />
           <div
@@ -148,7 +151,7 @@ const Header = () => {
                 Women
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Badge
                 // badgeContent={cartItemsQuantity}
                 color="secondary"
@@ -164,7 +167,7 @@ const Header = () => {
                   Favorites
                 </button>
               </Badge>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

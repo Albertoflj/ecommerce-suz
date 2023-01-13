@@ -3,12 +3,15 @@ import { useState } from "react";
 import CloseIcon from "../../../../Assets/icons/icons/close-icon.png";
 import { commerce } from "../../../../lib/commerce";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getCartItems } from "../../../../redux/cartQuantitySlice";
 
 const ProductCard = (props) => {
   const [product, setProduct] = useState(props.product);
   const [productCategory, setProductCategory] = useState("");
   const [isCart, setIsCart] = useState(false);
   const [isFavorites, setIsFavorites] = useState(false);
+  const dispatch = useDispatch();
 
   async function getProductCategory() {
     const prodCategory = await commerce.products.retrieve(product.product_id);
@@ -25,6 +28,7 @@ const ProductCard = (props) => {
             console.log(error);
           })
       : console.log("no cart");
+    dispatch(getCartItems());
   }
   function removeProductFromFavorites() {}
   useEffect(() => {

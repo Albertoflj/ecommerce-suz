@@ -9,6 +9,7 @@ import { commerce } from "../../../lib/commerce";
 import Sizes from "../../Sizes/Sizes";
 import { store } from "../../../redux/store";
 import { getStatus } from "redux-resource";
+import Loader from "../../Loader/Loader";
 
 const SingleProductPage = (props) => {
   let product = props.product;
@@ -22,9 +23,7 @@ const SingleProductPage = (props) => {
   const selectSize = (size) => {
     setIsSizeSelected(size);
   };
-  // const state = store.getState();
 
-  // console.log("cartRequestStatus", cartRequestStatus);
   useEffect(() => {
     fetchVariants();
     localStorage.getItem("suz-favorites") &&
@@ -87,7 +86,7 @@ const SingleProductPage = (props) => {
   return (
     <>
       {loading ? (
-        <h3>Loading...</h3>
+        <Loader />
       ) : (
         <>
           <Header />

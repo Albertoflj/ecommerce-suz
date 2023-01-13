@@ -73,6 +73,7 @@ const Cart = (props) => {
                         quantity={product.quantity}
                         className="product-list-item  "
                         for="cart"
+                        key={product.id}
                       />
                     );
                   })

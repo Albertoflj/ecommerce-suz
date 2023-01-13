@@ -51,7 +51,7 @@ const Sort = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill="currentColor"
+                fill="black"
                 className="bi bi-sort-alpha-up"
                 viewBox="0 0 16 16"
               >
@@ -63,7 +63,7 @@ const Sort = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill="currentColor"
+                fill="black"
                 className="bi bi-sort-alpha-down"
                 viewBox="0 0 16 16"
               >
@@ -86,7 +86,7 @@ const Sort = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill="currentColor"
+                fill="black"
                 className="bi bi-sort-up"
                 viewBox="0 0 16 16"
               >
@@ -97,7 +97,7 @@ const Sort = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill="currentColor"
+                fill="black"
                 className="bi bi-sort-down"
                 viewBox="0 0 16 16"
               >

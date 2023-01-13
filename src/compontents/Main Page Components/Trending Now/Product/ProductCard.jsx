@@ -62,7 +62,7 @@ const ProductCard = (props) => {
           {/* 
           maybe should be input button
           */}
-          <h5>{props.quantity}</h5>
+          <h5>{product.quantity}</h5>
         </div>
         <h4 className="trending-product-price">
           {product.price.formatted_with_symbol}

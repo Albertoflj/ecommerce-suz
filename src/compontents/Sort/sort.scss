@@ -1,3 +1,4 @@
+@use "../main-styles/fonts/fonts.scss" as f;
 .sort {
   padding: 16px;
   box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
@@ -22,6 +23,7 @@
         font-family: "Proxima Nova";
         font-size: 12px;
         margin: 0;
+        color: f.$black;
       }
     }
     .name-variation,

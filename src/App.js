@@ -17,6 +17,7 @@ import AddToCartNotification from "./compontents/AddToCartNotification/AddToCart
 import Cart from "./compontents/Cart/Cart";
 import Favorites from "./compontents/Favorites/Favorites";
 import Sort from "./compontents/Sort/Sort";
+import CheckoutPage from "./compontents/Pages/CheckoutPage/CheckoutPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -69,6 +70,7 @@ function App() {
             })}
             {/* <Route path="/notification" element={<AddToCartNotification />} /> */}
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
           </Routes>
         )}
       </div>

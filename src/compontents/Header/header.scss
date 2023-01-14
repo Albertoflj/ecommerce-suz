@@ -114,6 +114,7 @@ button {
 .menu-active {
   font-family: "Brandon Grotesque";
   position: absolute;
+  // z-index: 1001;
   background-color: black;
   width: 100%;
   min-height: 120vh;

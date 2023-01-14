@@ -4,6 +4,7 @@ import close_icon from "../../Assets/icons/icons/close-icon.png";
 import Sizes from "../Sizes/Sizes";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { useRef } from "react";
 
 import {
   setLow,
@@ -15,8 +16,12 @@ import {
 } from "../../redux/filterSlice";
 
 const Filter = () => {
+  const lowRef = useRef();
+  const midRef = useRef();
+  const highRef = useRef();
   const dispatch = useDispatch();
   const reduxFilterSettings = useSelector((state) => state.filter);
+
   const handleForm = (e) => {
     const filterSettings = {
       low: e.target.elements.low.checked,
@@ -26,7 +31,7 @@ const Filter = () => {
       priceMax: e.target.elements["price-max"].value,
     };
     e.preventDefault();
-
+    const handleChecked = (item) => {};
     if (filterSettings.priceMin > filterSettings.priceMax) {
       alert("Min price can't be greater than max price");
     } else if (filterSettings.priceMin < 0 || filterSettings.priceMax < 0) {
@@ -43,12 +48,21 @@ const Filter = () => {
     }
   };
 
+  const clearFilter = () => {
+    dispatch(setModified(false));
+    dispatch(setLow(false));
+    dispatch(setMid(false));
+    dispatch(setHigh(false));
+    dispatch(setPriceMin(0));
+    dispatch(setPriceMax(0));
+    lowRef.current.checked = false;
+    midRef.current.checked = false;
+    highRef.current.checked = false;
+  };
+
   return (
     <div className="filter-menu">
       <div className="filter-menu-content">
-        {/* 
-        //!! SHOULD BE A BUTTON
-        */}
         {/* <button className="close-icon-container">
           <img src={close_icon} alt="close-icon" className="close-icon" />
         </button> */}
@@ -57,15 +71,33 @@ const Filter = () => {
           <div className="filter-categories">
             <h6>Categories</h6>
             <div className="filter-category">
-              <input type="checkbox" name="low" id="input-category-low" />
+              <input
+                ref={lowRef}
+                type="checkbox"
+                name="low"
+                id="input-category-low"
+                defaultChecked={reduxFilterSettings.low}
+              />
               <label htmlFor="input-category-low">Low</label>
             </div>
             <div className="filter-category">
-              <input type="checkbox" name="mid" id="input-category-mid" />
+              <input
+                ref={midRef}
+                type="checkbox"
+                name="mid"
+                id="input-category-mid"
+                defaultChecked={reduxFilterSettings.mid}
+              />
               <label htmlFor="input-category-mid">Mid</label>
             </div>
             <div className="filter-category">
-              <input type="checkbox" name="high" id="input-category-high" />
+              <input
+                ref={highRef}
+                type="checkbox"
+                name="high"
+                id="input-category-high"
+                defaultChecked={reduxFilterSettings.high}
+              />
               <label htmlFor="input-category-high">High</label>
             </div>
             <div className="filter-category"></div>
@@ -94,7 +126,15 @@ const Filter = () => {
               Apply
             </button>
 
-            {/* <button>Clear</button> */}
+            <button
+              className="clear-filter"
+              type="button"
+              onClick={() => {
+                clearFilter();
+              }}
+            >
+              Clear
+            </button>
           </div>
         </form>
       </div>

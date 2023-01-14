@@ -34,7 +34,7 @@ const Sizes = (props) => {
                 id={`size${variantSize}`}
                 className="filter-sizes-checkbox product-size-checkbox"
                 value={`${variantSize}`}
-                checked={selectedSize === `${variantSize}`}
+                defaultChecked={selectedSize === `${variantSize}`}
                 onChange={(e) => {
                   onSelectedSize(e.target.value);
                 }}

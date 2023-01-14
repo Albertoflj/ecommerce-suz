@@ -48,8 +48,9 @@ const ProductList = (props) => {
           }
         }
       });
+    } else {
+      return products;
     }
-    return products;
   };
   const filteredProducts = filterProducts(props.products, filterSettings);
   const sortedProducts = sortProducts(filteredProducts, sortType);

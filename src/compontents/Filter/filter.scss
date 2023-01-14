@@ -8,6 +8,7 @@
   top: 200px;
   box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
   overflow: hidden;
+  z-index: 1000;
   //   background-color: red;
   min-height: 410px;
   max-width: 380px;
@@ -187,6 +188,12 @@
     transition: all 0.1s ease-in-out;
 
     opacity: 0.8;
+  }
+  .clear-filter {
+    margin-top: 5px;
+    background-color: transparent;
+    border: 2px solid f.$orange;
+    color: f.$orange;
   }
 }
 

@@ -4,11 +4,12 @@
 .product-list {
   display: flex;
   justify-content: center;
+  max-height: fit-content;
   .product-list-contents {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1%;
+    grid-gap: 10px;
     max-width: 1250px;
 
     .trending-product-card {

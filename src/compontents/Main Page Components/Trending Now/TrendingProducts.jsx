@@ -48,8 +48,6 @@ const TrendingProducts = (props) => {
     } else {
       setXPos(xPos - 260);
     }
-
-    console.log(xPos);
   };
 
   useEffect(() => {

@@ -21,7 +21,7 @@ const AboutPage = () => {
           </div>
         </section>
         <section className="section-tech">
-          <h4>Technologies I've used on this project:</h4>
+          <h4>Technologies I've used in this project:</h4>
           <div className="technologies-div">
             <div className="tech">
               <div className="technologies-react technology"></div>

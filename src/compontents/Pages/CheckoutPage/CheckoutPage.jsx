@@ -25,8 +25,6 @@ const CheckoutPage = () => {
     (state) => state.cartQuantity.cartItemsQuantity
   );
 
-  // const stripe = require("stripe")(process.env.STRIPE_PUBLIC_KEY);
-
   const validateEmail = (email) => {
     return String(email)
       .toLowerCase()
@@ -39,6 +37,7 @@ const CheckoutPage = () => {
     e.preventDefault();
     if (!validateEmail(emailRef.current.value)) {
       alert("Enter valid email.");
+      return;
     }
   };
   async function getCart() {

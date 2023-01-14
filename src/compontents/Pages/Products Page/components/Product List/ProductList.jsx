@@ -6,9 +6,7 @@ import { useSelector } from "react-redux";
 const ProductList = (props) => {
   const { sortType } = useSelector((state) => state.sort);
   const filterSettings = useSelector((state) => state.filter);
-  console.log("filterSettings", filterSettings);
   const sortProducts = (products, sortMode) => {
-    console.log("sortMode", sortMode);
     switch (sortMode) {
       case "A-Z":
         return products.sort((a, b) => a.name.localeCompare(b.name));
@@ -61,30 +59,32 @@ const ProductList = (props) => {
       <div className="product-list-contents">
         {sortedProducts.map((singleProduct) => {
           // console.log("singleProduct", singleProduct);
-          // if(product.categories[0].name.slice(0,1).toLowerCase() === props.category){
+          if (
+            singleProduct.categories[0].name.slice(0, 1).toLowerCase() ===
+            props.category
+          ) {
+            return (
+              <Link
+                to={`/product/${singleProduct.sku}`}
+                className="product-list-link"
+                key={singleProduct.sku}
+              >
+                <ProductCard product={singleProduct} />
+              </Link>
+            );
 
-          return (
-            <Link
-              to={`/product/${singleProduct.sku}`}
-              className="product-list-link"
-              key={singleProduct.sku}
-            >
-              <ProductCard product={singleProduct} />
-            </Link>
-          );
+            // return (
+            //   <Link
+            //     to={`/product/${singleProduct.sku}`}
+            //     className="product-list-link"
+            //     key={singleProduct.sku}
+            //   >
+            //     <ProductCard product={singleProduct} />
+            //   </Link>
+            // );
 
-          // return (
-          //   <Link
-          //     to={`/product/${singleProduct.sku}`}
-          //     className="product-list-link"
-          //     key={singleProduct.sku}
-          //   >
-          //     <ProductCard product={singleProduct} />
-          //   </Link>
-          // );
-
-          // )}
-          // }
+            // )}
+          }
         })}
       </div>
     </div>

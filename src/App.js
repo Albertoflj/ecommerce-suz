@@ -38,7 +38,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/ecommerce-suz">
       <div className="App">
         {isLoading ? (
           <Loader />

@@ -25,7 +25,7 @@
     font-family: "Proxima Nova";
     font-weight: lighter;
     max-height: 680px;
-    background-color: f.$orange50;
+    background-color: f.$orange;
     border-radius: 10px;
     max-width: 620px;
     width: 100%;
@@ -55,6 +55,7 @@
       }
 
       .trending-product-card {
+        position: relative;
         padding: 12px;
         background-color: white;
         border-radius: 10px;
@@ -97,6 +98,19 @@
               font-size: 18px;
               margin-top: 10px;
             }
+          }
+        }
+        .trending-product-close-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 16px;
+          height: 16px;
+          margin-right: 10px;
+          cursor: pointer;
+          img {
+            width: 16px;
+            height: 16px;
           }
         }
       }
@@ -177,7 +191,72 @@
   color: f.$black25;
 }
 
-@include breakpoint-down(large) {
+// @include breakpoint-down(large) {
+//   .my-cart {
+//     .checkout-cart {
+//       h5 {
+//         font-family: "Proxima Nova";
+//         font-weight: lighter;
+//         font-size: 22px;
+//       }
+//       .checkout-cart-products {
+//         max-height: 500px;
+//         // padding-top: 120px;
+//         overflow-x: hidden;
+//         .trending-product-card:not(:first-child) {
+//           margin-top: 18px;
+//         }
+
+//         .trending-product-card {
+//           align-items: center;
+//           height: 182px;
+//           // max-width: 462px;
+
+//           img {
+//             width: 130px;
+//             height: 130px;
+//           }
+//           .trending-product-text {
+//             width: 100%;
+//             .trending-product-title {
+//               font-size: 24px;
+//             }
+//             .trending-product-category {
+//               margin-top: 10px;
+//               font-size: 18px;
+//               font-family: "Proxima Nova";
+//               font-weight: 400;
+//             }
+//             .trending-product-price {
+//               margin-top: 25px;
+//               font-size: 14px;
+//             }
+//             .cart-quantity {
+//               display: flex;
+//               h5 {
+//                 font-size: 18px;
+//                 margin-top: 10px;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .shipping-details {
+//     .input-first-and-last-name,
+//     .input-city-and-zip {
+//       flex-direction: column;
+//     }
+//     .input-div {
+//       label {
+//         font-size: 25px;
+//       }
+//     }
+//   }
+// }
+
+@include breakpoint-down(small) {
   .my-cart {
     .checkout-cart {
       h5 {
@@ -186,43 +265,40 @@
         font-size: 22px;
       }
       .checkout-cart-products {
-        max-height: 500px;
-        // padding-top: 120px;
-        overflow-x: hidden;
         .trending-product-card:not(:first-child) {
-          margin-top: 18px;
+          margin-top: 10px;
         }
 
         .trending-product-card {
-          align-items: center;
-          height: 182px;
-          // max-width: 462px;
-
+          height: 120px;
           img {
-            width: 130px;
-            height: 130px;
+            width: 92px;
+            height: 92px;
           }
           .trending-product-text {
-            width: 100%;
             .trending-product-title {
-              font-size: 24px;
+              font-size: 18px;
             }
             .trending-product-category {
-              margin-top: 10px;
-              font-size: 18px;
-              font-family: "Proxima Nova";
-              font-weight: 400;
+              margin-top: 6px;
+              font-size: 12px;
             }
             .trending-product-price {
-              margin-top: 25px;
+              margin-top: 10px;
               font-size: 14px;
             }
             .cart-quantity {
-              display: flex;
               h5 {
-                font-size: 18px;
+                font-size: 12px;
                 margin-top: 10px;
               }
+            }
+          }
+          .trending-product-close-icon {
+            cursor: pointer;
+            img {
+              width: 12px;
+              height: 12px;
             }
           }
         }

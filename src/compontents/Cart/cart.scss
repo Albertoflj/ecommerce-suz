@@ -2,6 +2,7 @@
 @import "../main-styles/mixins.scss";
 .cart {
   width: 396px;
+  // overflow-x: hidden;
   max-height: 490px;
   display: flex;
   justify-content: center;

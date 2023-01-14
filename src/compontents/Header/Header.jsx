@@ -52,17 +52,17 @@ const Header = () => {
   function handleHamburgerMenu() {
     if (hamburgerMenu === "hamburger-inactive") {
       setHamburgerMenu("hamburger-active");
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
       setMenuDisplay("menu-active");
     } else {
       setHamburgerMenu("hamburger-inactive");
-      document.body.style.overflow = "auto";
+      document.body.style.overflowY = "auto";
       setMenuDisplay("menu-inactive");
     }
   }
   function closeMenu() {
     setHamburgerMenu("hamburger-inactive");
-    document.body.style.overflow = "auto";
+    document.body.style.overflowY = "auto";
     setMenuDisplay("menu-inactive");
   }
 
@@ -137,7 +137,7 @@ const Header = () => {
               <Link
                 to="/men"
                 className="categories-men underline-animation"
-                onChange={closeMenu}
+                onClick={closeMenu}
               >
                 Men
               </Link>
@@ -146,7 +146,7 @@ const Header = () => {
               <Link
                 to="/women"
                 className="categories-women underline-animation"
-                onChange={closeMenu}
+                onClick={closeMenu}
               >
                 Women
               </Link>

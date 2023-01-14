@@ -5,6 +5,9 @@ import { commerce } from "../../../lib/commerce";
 import { useState, useEffect, useRef } from "react";
 import ProductCard from "../../Main Page Components/Trending Now/Product/ProductCard";
 import { Link } from "react-router-dom";
+import Loader from "../../Loader/Loader";
+import { useSelector } from "react-redux";
+import Stripe from "stripe";
 
 const CheckoutPage = () => {
   const [lineItems, setLineItems] = useState([]);
@@ -18,6 +21,12 @@ const CheckoutPage = () => {
   const zipCodeRef = useRef();
   const shippingAddressRef = useRef();
   const aptRef = useRef();
+  const cartQuantity = useSelector(
+    (state) => state.cartQuantity.cartItemsQuantity
+  );
+
+  // const stripe = require("stripe")(process.env.STRIPE_PUBLIC_KEY);
+
   const validateEmail = (email) => {
     return String(email)
       .toLowerCase()
@@ -44,7 +53,7 @@ const CheckoutPage = () => {
   useEffect(() => {
     getCart();
     setLoading(false);
-  }, []);
+  }, [cartQuantity]);
 
   return (
     <>
@@ -54,7 +63,7 @@ const CheckoutPage = () => {
         <div className="checkout-cart">
           <div className="checkout-cart-products">
             {loading ? (
-              <>loading</>
+              <>Loading</>
             ) : lineItems && lineItems.length ? (
               lineItems.map((product) => {
                 return (

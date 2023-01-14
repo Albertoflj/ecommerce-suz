@@ -19,6 +19,7 @@ import Favorites from "./compontents/Favorites/Favorites";
 import Sort from "./compontents/Sort/Sort";
 import CheckoutPage from "./compontents/Pages/CheckoutPage/CheckoutPage";
 import Loader from "./compontents/Loader/Loader";
+import AboutPage from "./compontents/Pages/AboutPage/AboutPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ function App() {
         ) : (
           <Routes>
             <Route path="/" element={<MainPage products={products} />} />
-            <Route path="/about" element={<Header products={products} />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route
               path="/men"
               element={<ProductsPage products={products} category="m" />}

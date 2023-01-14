@@ -1,0 +1,125 @@
+@use "../../main-styles/fonts/fonts.scss" as f;
+
+.about-page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //   width: 100%;
+  text-align: center;
+
+  section {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    .section-main-div {
+      max-width: 828px;
+    }
+    h1 {
+      text-align: center;
+      font-family: "Inter";
+      font-weight: bolder;
+      font-size: 38px;
+    }
+    p {
+      margin-top: 40px;
+      text-align: center;
+      color: f.$black75;
+      font-family: "Proxima Nova";
+    }
+    h4 {
+      font-size: 26px;
+    }
+  }
+}
+.section-tech {
+  .technologies-div {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .technology {
+    width: 100px;
+    height: 100px;
+    // background-color: f.$orange;
+    border-radius: 50%;
+    background-position: center;
+    // background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .technologies-react {
+    background-image: url("../../../Assets/technologies/react.png");
+  }
+  .technologies-commerce {
+    background-image: url("../../../Assets/technologies/commercejs.svg");
+  }
+  .technologies-sass {
+    background-image: url("../../../Assets/technologies/sass.png");
+  }
+  .technologies-mui {
+    background-image: url("../../../Assets/technologies/mui.png");
+  }
+  .technologies-redux {
+    background-image: url("../../../Assets/technologies/redux.png");
+    background-size: 80%;
+  }
+}
+
+.section-projects {
+  .individual-project {
+    max-width: 257px;
+    width: 100%;
+    text-align: center;
+  }
+  .projects {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 900px;
+    gap: 10px;
+  }
+  .project {
+    display: block;
+    max-width: 257px;
+    width: 100%;
+    height: 257px;
+    border-radius: 10px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  .project-container {
+    max-width: 257px;
+    width: 100%;
+    height: 257px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .project:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+  }
+
+  .project::after:hover {
+    background-color: black;
+  }
+
+  .to-do-project {
+    background-image: url("../../../Assets/Other-projects/to-do.png");
+  }
+  .vivo-blog-project {
+    background-image: url("../../../Assets/Other-projects/vivo-blog.png");
+  }
+  .calculator-app-project {
+    background-image: url("../../../Assets/Other-projects/calculator-app.png");
+  }
+}

@@ -24,6 +24,7 @@ const ProductList = (props) => {
   const filterProducts = (products, filterSettings) => {
     if (filterSettings.modified) {
       return products.filter((product) => {
+        console.log(product);
         if (filterSettings.low) {
           if (product.categories[1].slug === "low") {
             return product;
@@ -39,18 +40,19 @@ const ProductList = (props) => {
             return product;
           }
         }
-        if (filterSettings.minPrice > 0 && filterSettings.maxPrice > 0) {
+        console.log("fp", filterSettings.priceMax);
+        console.log("pp", Math.floor(product.price.raw));
+        if (filterSettings.priceMin > 0 && filterSettings.priceMax > 0) {
           if (
-            product.price.raw >= filterSettings.minPrice &&
-            product.price.raw <= filterSettings.maxPrice
+            Math.floor(product.price.raw) >= filterSettings.priceMin &&
+            Math.floor(product.price.raw) <= filterSettings.priceMax
           ) {
             return product;
           }
         }
       });
-    } else {
-      return products;
     }
+    return products;
   };
   const filteredProducts = filterProducts(props.products, filterSettings);
   const sortedProducts = sortProducts(filteredProducts, sortType);

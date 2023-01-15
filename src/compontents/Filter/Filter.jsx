@@ -41,7 +41,7 @@ const Filter = () => {
       dispatch(setLow(filterSettings.low));
       dispatch(setMid(filterSettings.mid));
       dispatch(setHigh(filterSettings.high));
-      if (filterSettings.priceMin !== "" && filterSettings.priceMax !== "") {
+      if (filterSettings.priceMin != "" && filterSettings.priceMax != "") {
         dispatch(setPriceMin(filterSettings.priceMin));
         dispatch(setPriceMax(filterSettings.priceMax));
       }

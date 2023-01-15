@@ -11,7 +11,7 @@ const MainPage = (props) => {
   const scrollToCategories = () => {
     window.scrollTo({
       top: 700,
-      behavior: "smooth",
+      // behavior: "smooth",
     });
   };
   return (

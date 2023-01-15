@@ -38,7 +38,7 @@ function App() {
   }, []);
 
   return (
-    <HashRouter basename="/ecommerce-suz  ">
+    <HashRouter>
       <div className="App">
         {isLoading ? (
           <Loader />

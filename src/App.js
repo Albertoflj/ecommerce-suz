@@ -3,7 +3,7 @@ import Header from "./compontents/Header/Header";
 import "../src/compontents/main-styles/fonts/fonts.scss";
 import "../src/compontents/Header/header.scss";
 import "../src/compontents/main-styles/main.scss";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { commerce } from "./lib/commerce";
 import { useState, useEffect } from "react";
 import MainPage from "./compontents/Pages/MainPage/MainPage";
@@ -38,7 +38,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/ecommerce-suz  ">
+    <HashRouter basename="/ecommerce-suz  ">
       <div className="App">
         {isLoading ? (
           <Loader />
@@ -76,7 +76,7 @@ function App() {
           </Routes>
         )}
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 

@@ -16,8 +16,6 @@ const Cart = (props) => {
 
   useEffect(() => {
     setLoading(true);
-    // console.log("lineItems", lineItems);\
-    // console.log(lineItems[0].quantity);
     getCart();
   }, [cartQuantity]);
   async function getCart() {
@@ -27,7 +25,6 @@ const Cart = (props) => {
     const cartItems = cart.line_items;
     setLineItems(cartItems);
     setCartTotal(cartQuantity);
-    // console.log("lineItems", lineItems);
     setLoading(false);
   }
 

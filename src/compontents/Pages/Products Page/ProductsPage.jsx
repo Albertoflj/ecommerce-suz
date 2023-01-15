@@ -9,11 +9,6 @@ const ProductsPage = (props) => {
       <Header />
       <OptionsBar />
       <ProductList products={props.products} category={props.category} />
-      {/* 
-    FILTER AND SORT
-    LINE <BR>
-    PRODUCTS
-    */}
       <Footer />
     </>
   );

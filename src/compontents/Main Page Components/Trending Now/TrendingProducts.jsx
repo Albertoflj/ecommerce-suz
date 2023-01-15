@@ -6,30 +6,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const TrendingProducts = (props) => {
-  const [products, setProducts] = useState(props.products);
-  // const [trendingProducts] = useState(props.products);
-  // function handleResize() {
-  //     if(window.innerWidth < 1360){
-  //         setProducts(props.products.slice(0, 3));
-  //     }
-  //     else if(window.innerWidth < 1036){
-  //         setProducts(props.products.slice(0, 2));
-  //     }
-  //     else if(window.innerWidth < 768){
-  //         setProducts(props.products.slice(0, 1));
-  //     }
-  //     else{
-  //         setProducts(props.products.slice(0, 4));
-  //     }
-  //     console.log("test");
-  // };
-  // useEffect(() => {
-  //     handleResize();
-  //     window.addEventListener("resize", handleResize);
-  //     return()=>{
-  //         window.removeEventListener("resize", handleResize);
-  //     }
-  // }, []);
+  const products = props.products;
 
   const carouselRef = useRef(null);
   const [carouselWidth, setCarouselWidth] = useState(0);

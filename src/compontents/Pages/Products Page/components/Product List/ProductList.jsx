@@ -58,7 +58,6 @@ const ProductList = (props) => {
     <div className="product-list padding">
       <div className="product-list-contents">
         {sortedProducts.map((singleProduct) => {
-          // console.log("singleProduct", singleProduct);
           if (
             singleProduct.categories[0].name.slice(0, 1).toLowerCase() ===
             props.category
@@ -72,18 +71,6 @@ const ProductList = (props) => {
                 <ProductCard product={singleProduct} />
               </Link>
             );
-
-            // return (
-            //   <Link
-            //     to={`/product/${singleProduct.sku}`}
-            //     className="product-list-link"
-            //     key={singleProduct.sku}
-            //   >
-            //     <ProductCard product={singleProduct} />
-            //   </Link>
-            // );
-
-            // )}
           }
         })}
       </div>

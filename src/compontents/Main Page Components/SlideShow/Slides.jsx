@@ -1,10 +1,9 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./Slides.scss";
 
 const Slides = (props) => {
-  const [products, setProducts] = useState(props.products);
+  const products = props.products;
 
   return (
     <div className="content-right-side desktop">
@@ -30,14 +29,9 @@ const Slides = (props) => {
           className="slide-show-product"
         />
       </div>
-      <button
-        className="shop-now shadow mobile-medium"
-        onChange={() => {
-          props.scroll();
-        }}
-      >
-        Shop Now
-      </button>
+      <Link to="/men">
+        <button className="shop-now shadow mobile-medium">Shop Now</button>
+      </Link>
     </div>
   );
 };

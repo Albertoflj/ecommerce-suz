@@ -1,8 +1,6 @@
 import Header from "../../Header/Header";
 import "./MainPage.scss";
 import Slides from "../../Main Page Components/SlideShow/Slides";
-import MenCategoryImage from "../../../Assets/Products/men/photo_1a.jpg";
-import WomenCategoryImage from "../../../Assets/Products/women/1.jpg";
 import { Link } from "react-router-dom";
 import TrendingProducts from "../../Main Page Components/Trending Now/TrendingProducts";
 import Footer from "../../Footer/Footer";
@@ -19,9 +17,6 @@ const MainPage = (props) => {
                 A world of shoes at your fingertips.
               </h1>
               <p className="page-description">
-                {/* Lorem ipsum dolor sit amet consectetur. Ornare consectetur in
-                consectetur magna. Nec integer nisi in fusce ornare ultrices
-                porta faucibus id. */}
                 Our collection features the latest trends and classic designs
                 from top brands, so you can always find a shoe that fits your
                 personal style.
@@ -40,9 +35,7 @@ const MainPage = (props) => {
         <section className="categories-section">
           <div className="categories-men cat-centr">
             <Link to="/men" className="cat-man">
-              <div className="category-image">
-                {/* <img src={MenCategoryImage} alt="men-category" /> */}
-              </div>
+              <div className="category-image"></div>
             </Link>
             <div className="category-text">
               <Link to="/men">
@@ -52,9 +45,7 @@ const MainPage = (props) => {
           </div>
           <div className="categories-women cat-centr">
             <Link to="/women" className="cat-woman">
-              <div className="category-image">
-                {/* <img src={WomenCategoryImage} alt="women-cateogry" /> */}
-              </div>
+              <div className="category-image"></div>
             </Link>
             <div className="category-text">
               <Link to="/women">

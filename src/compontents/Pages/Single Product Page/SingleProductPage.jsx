@@ -21,8 +21,8 @@ const SingleProductPage = (props) => {
 
   useEffect(() => {
     fetchVariants();
-    localStorage.getItem("suz-favorites") &&
-      setFavoritesArray(JSON.parse(localStorage.getItem("suz-favorites")));
+    // localStorage.getItem("suz-favorites") &&
+    //   setFavoritesArray(JSON.parse(localStorage.getItem("suz-favorites")));
   }, []);
   const url = new URL(
     `https://api.chec.io/v1/products/${product.id}/variant_groups/`
@@ -53,15 +53,15 @@ const SingleProductPage = (props) => {
 
     const getCartItemsAction = dispatch(getCartItems());
 
-    getCartItemsAction.then(
-      (response) => {
-        setResponse("succeded");
-      },
-      (error) => {
-        // console.log("Request failed:", error);
-        setResponse("failed");
-      }
-    );
+    // getCartItemsAction.then(
+    //   (response) => {
+    //     setResponse("succeded");
+    //   },
+    //   (error) => {
+    //     // console.log("Request failed:", error);
+    //     setResponse("failed");
+    //   }
+    // );
   };
 
   return (

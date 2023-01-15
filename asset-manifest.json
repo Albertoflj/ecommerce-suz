@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ecommerce-suz/static/css/main.73881ce6.css",
-    "main.js": "/ecommerce-suz/static/js/main.057e80a0.js",
+    "main.css": "/ecommerce-suz/static/css/main.211de3b2.css",
+    "main.js": "/ecommerce-suz/static/js/main.ad30415e.js",
     "static/media/1.jpg": "/ecommerce-suz/static/media/1.873e955cbe2a82ada110.jpg",
     "static/media/photo_1a.jpg": "/ecommerce-suz/static/media/photo_1a.da1a812d5aef0a23aa01.jpg",
     "static/media/to-do.png": "/ecommerce-suz/static/media/to-do.025219ba449bcef9d459.png",
@@ -20,11 +20,11 @@
     "index.html": "/ecommerce-suz/index.html",
     "static/media/heart.svg": "/ecommerce-suz/static/media/heart.ff9c1ee9d0c1996af8c32a94c0bc0e5f.svg",
     "static/media/cart2.svg": "/ecommerce-suz/static/media/cart2.27adf436e8f43d03264f2d1e4d7d2f1d.svg",
-    "main.73881ce6.css.map": "/ecommerce-suz/static/css/main.73881ce6.css.map",
-    "main.057e80a0.js.map": "/ecommerce-suz/static/js/main.057e80a0.js.map"
+    "main.211de3b2.css.map": "/ecommerce-suz/static/css/main.211de3b2.css.map",
+    "main.ad30415e.js.map": "/ecommerce-suz/static/js/main.ad30415e.js.map"
   },
   "entrypoints": [
-    "static/css/main.73881ce6.css",
-    "static/js/main.057e80a0.js"
+    "static/css/main.211de3b2.css",
+    "static/js/main.ad30415e.js"
   ]
 }

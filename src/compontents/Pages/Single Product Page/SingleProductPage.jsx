@@ -7,19 +7,14 @@ import { useDispatch } from "react-redux";
 import { getCartItems } from "../../../redux/cartQuantitySlice";
 import { commerce } from "../../../lib/commerce";
 import Sizes from "../../Sizes/Sizes";
-import { store } from "../../../redux/store";
-import { getStatus } from "redux-resource";
 import Loader from "../../Loader/Loader";
 
 const SingleProductPage = (props) => {
   let product = props.product;
   const [variants, setVariants] = useState();
   const [loading, setLoading] = useState(true);
-  const [response, setResponse] = useState();
   const quantityRef = useRef();
   const [isSizeSelected, setIsSizeSelected] = useState(false);
-  const [favoritesArray, setFavoritesArray] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false);
   const selectSize = (size) => {
     setIsSizeSelected(size);
   };
@@ -28,7 +23,6 @@ const SingleProductPage = (props) => {
     fetchVariants();
     localStorage.getItem("suz-favorites") &&
       setFavoritesArray(JSON.parse(localStorage.getItem("suz-favorites")));
-    console.log("favoritesArray", favoritesArray);
   }, []);
   const url = new URL(
     `https://api.chec.io/v1/products/${product.id}/variant_groups/`
@@ -56,15 +50,11 @@ const SingleProductPage = (props) => {
   const dispatch = useDispatch();
   const addToCart = async (productId, quantity) => {
     await commerce.cart.add(productId, quantity);
-    // .then((response) => console.log("response", response));
 
     const getCartItemsAction = dispatch(getCartItems());
 
     getCartItemsAction.then(
       (response) => {
-        // console.log("response", response);
-        // console.log("Request succeeded:", response);
-
         setResponse("succeded");
       },
       (error) => {
@@ -72,15 +62,6 @@ const SingleProductPage = (props) => {
         setResponse("failed");
       }
     );
-    console.log("response", response);
-    //empty cart
-    // commerce.cart.empty().then((response) => console.log(response));
-  };
-
-  const handleFavorites = () => {
-    if (isFavorite) {
-    } else {
-    }
   };
 
   return (

@@ -14,11 +14,9 @@ const Sort = () => {
     if (nameSortType === "A-Z") {
       setNameSortType("Z-A");
       dispatch(setSort(nameSortType));
-      console.log(nameSortType);
     } else if (nameSortType === "Z-A") {
       setNameSortType("A-Z");
       dispatch(setSort(nameSortType));
-      console.log(nameSortType);
     }
   };
   const handlePriceSort = () => {
@@ -28,11 +26,9 @@ const Sort = () => {
     if (priceSortType === "price-high") {
       setPriceSortType("price-low");
       dispatch(setSort(priceSortType));
-      console.log(priceSortType);
     } else if (priceSortType === "price-low") {
       setPriceSortType("price-high");
       dispatch(setSort(priceSortType));
-      console.log(priceSortType);
     }
   };
   return (

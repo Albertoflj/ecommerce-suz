@@ -8,12 +8,6 @@ import TrendingProducts from "../../Main Page Components/Trending Now/TrendingPr
 import Footer from "../../Footer/Footer";
 
 const MainPage = (props) => {
-  const scrollToCategories = () => {
-    window.scrollTo({
-      top: 700,
-      // behavior: "smooth",
-    });
-  };
   return (
     <>
       <Header />
@@ -33,14 +27,12 @@ const MainPage = (props) => {
                 personal style.
               </p>
             </div>
-            <button
-              className="shop-now shadow desktop-medium"
-              onClick={() => {
-                scrollToCategories();
-              }}
-            >
-              Shop Now
-            </button>
+
+            <Link to="/men">
+              <button className="shop-now shadow desktop-medium">
+                Shop Now
+              </button>
+            </Link>
           </div>
           <Slides products={props.products} />
         </section>

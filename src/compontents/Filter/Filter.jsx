@@ -32,18 +32,32 @@ const Filter = () => {
     };
     e.preventDefault();
     const handleChecked = (item) => {};
-    if (filterSettings.priceMin > filterSettings.priceMax) {
-      alert("Min price can't be greater than max price");
-    } else if (filterSettings.priceMin < 0 || filterSettings.priceMax < 0) {
-      alert("Price can't be negative");
+    if (
+      !filterSettings.low &&
+      !filterSettings.mid &&
+      !filterSettings.high &&
+      !filterSettings.priceMax &&
+      !filterSettings.priceMin
+    ) {
+      //do nothing
     } else {
-      dispatch(setModified(true));
-      dispatch(setLow(filterSettings.low));
-      dispatch(setMid(filterSettings.mid));
-      dispatch(setHigh(filterSettings.high));
-      if (filterSettings.priceMin != "" && filterSettings.priceMax != "") {
-        dispatch(setPriceMin(filterSettings.priceMin));
-        dispatch(setPriceMax(filterSettings.priceMax));
+      if (
+        filterSettings.priceMin &&
+        filterSettings.priceMax &&
+        filterSettings.priceMin > filterSettings.priceMax
+      ) {
+        alert("Min price can't be greater than max price");
+      } else if (filterSettings.priceMin < 0 || filterSettings.priceMax < 0) {
+        alert("Price can't be negative");
+      } else {
+        dispatch(setModified(true));
+        dispatch(setLow(filterSettings.low));
+        dispatch(setMid(filterSettings.mid));
+        dispatch(setHigh(filterSettings.high));
+        if (filterSettings.priceMin && filterSettings.priceMax) {
+          dispatch(setPriceMin(filterSettings.priceMin));
+          dispatch(setPriceMax(filterSettings.priceMax));
+        }
       }
     }
   };

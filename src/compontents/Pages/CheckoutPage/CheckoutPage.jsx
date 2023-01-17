@@ -7,8 +7,6 @@ import ProductCard from "../../Main Page Components/Trending Now/Product/Product
 import { Link } from "react-router-dom";
 import Loader from "../../Loader/Loader";
 import { useSelector } from "react-redux";
-import Stripe from "stripe";
-
 const CheckoutPage = () => {
   const [lineItems, setLineItems] = useState([]);
   const [loading, setLoading] = useState(true);

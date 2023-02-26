@@ -2,7 +2,7 @@
 
 [Live Link](https://albertoflj.github.io/ecommerce-suz/#/)
 
-Șuz is an e-commerce store made for shoes.
+Șuz is an e-commerce store made for shoes in ReactJS.
 
 ## Features
 

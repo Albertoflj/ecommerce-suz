@@ -4,8 +4,6 @@ import "./checkoutpage.scss";
 import { commerce } from "../../../lib/commerce";
 import { useState, useEffect, useRef } from "react";
 import ProductCard from "../../Main Page Components/Trending Now/Product/ProductCard";
-import { Link } from "react-router-dom";
-import Loader from "../../Loader/Loader";
 import { useSelector } from "react-redux";
 const CheckoutPage = () => {
   const [lineItems, setLineItems] = useState([]);
@@ -135,7 +133,6 @@ const CheckoutPage = () => {
           </form>
         </section>
       ) : null}
-      {/* <button className="continue-button">Continue</button> */}
 
       <Footer />
     </>

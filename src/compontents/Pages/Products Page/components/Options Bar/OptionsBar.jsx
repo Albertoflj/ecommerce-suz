@@ -1,4 +1,3 @@
-import LinkedIn from "../../../../../Assets/icons/icons/linkedin.svg";
 import Sort from "../../../../Sort/Sort";
 import "./optionsbar.scss";
 import { useState } from "react";
@@ -20,7 +19,6 @@ const OptionsBar = () => {
         <div className="options-bar-content">
           <button
             className="bar-button"
-            // onChange={"open filter"}
             onClick={() => {
               if (isFitlerVisible) {
                 setIsFilterVisible(false);

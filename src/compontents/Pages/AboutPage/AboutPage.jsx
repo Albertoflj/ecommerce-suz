@@ -75,8 +75,6 @@ const AboutPage = () => {
               </div>
               <h4>Calculator App</h4>
             </div>
-
-            {/* <div className="project to-do-project"></div> */}
           </div>
         </section>
       </div>

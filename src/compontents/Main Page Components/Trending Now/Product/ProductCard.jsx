@@ -63,9 +63,6 @@ const ProductCard = (props) => {
         <h6 className="trending-product-category">{productCategory}</h6>
         <div className="cart-quantity">
           <h5>Quantity: </h5>
-          {/* 
-          maybe should be input button
-          */}
           <h5>{product.quantity}</h5>
         </div>
         <h4 className="trending-product-price">

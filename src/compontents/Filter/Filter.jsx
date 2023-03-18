@@ -1,7 +1,5 @@
 import "./filter.scss";
 
-import close_icon from "../../Assets/icons/icons/close-icon.png";
-import Sizes from "../Sizes/Sizes";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useRef } from "react";
@@ -77,9 +75,6 @@ const Filter = () => {
   return (
     <div className="filter-menu">
       <div className="filter-menu-content">
-        {/* <button className="close-icon-container">
-          <img src={close_icon} alt="close-icon" className="close-icon" />
-        </button> */}
         <form onSubmit={handleForm}>
           <h5>Filter by:</h5>
           <div className="filter-categories">
@@ -131,10 +126,6 @@ const Filter = () => {
               </div>
             </div>
           </div>
-          {/* <div className="filter-on-sale">
-          <h6>On Sale</h6>
-          <input type="checkbox" name="on-sale" id="on-sale" />
-        </div> */}
           <div className="filter-buttons">
             <button className="filter-submit" type="submit">
               Apply

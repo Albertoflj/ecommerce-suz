@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { commerce } from "../../lib/commerce";
 
 const Sizes = (props) => {
   const [category, setCategory] = useState();
@@ -15,7 +14,6 @@ const Sizes = (props) => {
   });
 
   const [selectedSize, setSelectedSize] = useState();
-  //first check if category is for men or women, then check for product or filter
   if (props.for === "product") {
     function onSelectedSize(buttonValue) {
       setSelectedSize(buttonValue);

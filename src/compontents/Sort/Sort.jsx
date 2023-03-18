@@ -10,7 +10,6 @@ const Sort = () => {
   const dispatch = useDispatch();
   const handleNameSort = () => {
     setPriceSortType("price-high");
-    // setIsSortActivated(true);
     if (nameSortType === "A-Z") {
       setNameSortType("Z-A");
       dispatch(setSort(nameSortType));
@@ -21,8 +20,6 @@ const Sort = () => {
   };
   const handlePriceSort = () => {
     setNameSortType("Z-A");
-    // console.log("handlePriceSort");
-    // setIsSortActivated(true);
     if (priceSortType === "price-high") {
       setPriceSortType("price-low");
       dispatch(setSort(priceSortType));
@@ -76,7 +73,6 @@ const Sort = () => {
               handlePriceSort();
             }}
           >
-            {/* svg */}
             {priceSortType === "price-high" ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

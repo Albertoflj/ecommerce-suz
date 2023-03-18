@@ -44,7 +44,7 @@
     }
     .cart-items {
       display: flex;
-      overflow-y: scroll;
+      overflow-y: auto;
       flex-direction: column;
       width: 100%;
       margin-top: 24px;

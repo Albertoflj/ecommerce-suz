@@ -1,15 +1,15 @@
 @use "../main-styles/fonts/fonts.scss" as f;
 @import "../main-styles/mixins.scss";
 .cart {
-  width: 396px;
+  width: 24.75rem;
   // overflow-x: hidden;
-  max-height: 490px;
+  max-height: 30.625rem;
   display: flex;
   justify-content: center;
   position: absolute;
   z-index: 1000;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   // left: -80%;
   transform: translateX(-40%);
   top: 200%;
@@ -18,10 +18,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px;
-    width: 400px;
+    padding: 1.5rem;
+    width: 25rem;
     h3 {
-      font-size: 21px;
+      font-size: 1.3125rem;
       margin: 0;
       cursor: default;
     }
@@ -34,7 +34,7 @@
       margin: 0;
     }
     .trending-product-card:not(:first-child) {
-      margin-top: 18px;
+      margin-top: 1.125rem;
     }
     .cart-empty {
       text-align: center;
@@ -47,78 +47,78 @@
       overflow-y: auto;
       flex-direction: column;
       width: 100%;
-      margin-top: 24px;
-      max-height: 250px;
+      margin-top: 1.5rem;
+      max-height: 15.625rem;
       .trending-product-card {
         justify-content: space-between;
-        height: 90px;
+        height: 5.625rem;
         width: 100%;
         display: flex;
         flex-direction: row;
         cursor: default;
         img {
-          width: 90px;
-          height: 90px;
+          width: 5.625rem;
+          height: 5.625rem;
         }
         .trending-product-text {
-          max-width: 190px;
+          max-width: 11.875rem;
           width: 100%;
           .trending-product-title {
-            font-size: 21px;
+            font-size: 1.3125rem;
           }
           .trending-product-category {
-            font-size: 12px;
+            font-size: 0.75rem;
             font-family: "Proxima Nova";
             font-weight: 400;
           }
           .trending-product-price {
-            font-size: 21px;
+            font-size: 1.3125rem;
           }
         }
         .trending-product-close-icon {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 16px;
-          height: 16px;
-          margin-right: 10px;
+          width: 1rem;
+          height: 1rem;
+          margin-right: 0.625rem;
           cursor: pointer;
           img {
-            width: 8px;
-            height: 8px;
+            width: 0.5rem;
+            height: 0.5rem;
           }
         }
         .cart-quantity {
           display: block;
           display: flex;
-          font-size: 20px;
+          font-size: 1.25rem;
           justify-content: space-between;
           h5 {
             margin: 0;
           }
         }
       }
-      margin-bottom: 40px;
+      margin-bottom: 2.5rem;
     }
     .cart-total {
       display: flex;
       width: 100%;
       justify-content: space-between;
       h4 {
-        font-size: 21px;
+        font-size: 1.3125rem;
       }
     }
     .cart-checkout-link {
       width: 100%;
       .cart-checkout {
-        margin-top: 4px;
+        margin-top: 0.25rem;
         width: 100%;
-        min-height: 40px;
+        min-height: 2.5rem;
         background-color: f.$orange;
-        border-radius: 10px;
+        border-radius: 0.625rem;
         font-family: "Brandon Grotesque";
         color: white;
-        font-size: 21px;
+        font-size: 1.3125rem;
 
         transition: 0.1s all ease-in-out;
       }
@@ -145,58 +145,58 @@
 @include breakpoint-down(large) {
   .cart {
     transform: translateX(0%);
-    width: 275px;
-    right: 10px;
+    width: 17.1875rem;
+    right: 0.625rem;
     .trending-product-category {
       display: none;
     }
     .cart-container {
-      padding: 16px;
-      width: 275px;
+      padding: 1rem;
+      width: 17.1875rem;
       .cart-items {
-        max-height: 200px;
+        max-height: 12.5rem;
         .trending-product-card {
-          height: 70px;
+          height: 4.375rem;
           img {
-            width: 70px;
-            height: 70px;
+            width: 4.375rem;
+            height: 4.375rem;
           }
           .trending-product-text {
-            max-width: 130px;
+            max-width: 8.125rem;
             .trending-product-title {
-              font-size: 16px;
+              font-size: 1rem;
               white-space: nowrap;
             }
             .trending-product-category {
-              font-size: 10px;
+              font-size: 0.625rem;
             }
             .trending-product-price {
-              font-size: 16px;
+              font-size: 1rem;
             }
           }
           .trending-product-close-icon {
-            width: 12px;
-            height: 12px;
-            margin-right: 8px;
+            width: 0.75rem;
+            height: 0.75rem;
+            margin-right: 0.5rem;
             img {
-              width: 6px;
-              height: 6px;
+              width: 0.375rem;
+              height: 0.375rem;
             }
           }
           .cart-quantity {
-            font-size: 16px;
+            font-size: 1rem;
           }
         }
       }
       .cart-total {
         h4 {
-          font-size: 16px;
+          font-size: 1rem;
         }
       }
       .cart-checkout-link {
         .cart-checkout {
-          min-height: 30px;
-          font-size: 16px;
+          min-height: 1.875rem;
+          font-size: 1rem;
         }
       }
     }

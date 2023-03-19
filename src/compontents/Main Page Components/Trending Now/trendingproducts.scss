@@ -2,7 +2,7 @@
 @import "../../main-styles/mixins.scss";
 .trending-products {
   .trending-title {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     font-family: "Brandon Grotesque";
   }
@@ -17,13 +17,13 @@
   }
   .trending-products-container {
     overflow-x: hidden;
-    max-width: 1200px;
+    max-width: 75rem;
   }
   button {
     cursor: pointer;
-    height: 32px;
-    min-width: 32px;
-    max-width: 32px;
+    height: 2rem;
+    min-width: 2rem;
+    max-width: 2rem;
     img {
       height: 100%;
       width: 100%;
@@ -37,51 +37,50 @@
   width: 100%;
   height: fit-content;
   color: f.$black;
-  margin-bottom: 200px;
+  margin-bottom: 12.5rem;
 
   .trending-products-cards {
-    height: 400px;
+    height: 25rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    // justify-content: space-around;
     width: fit-content;
   }
   .trending-product-card {
     pointer-events: none;
-    border-radius: 5px;
-    box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
-    min-width: 240px;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0.3125rem 0.5625rem 0 rgba(35, 28, 28, 0.3);
+    min-width: 15rem;
     overflow-y: hidden;
     height: fit-content;
-    margin: 0 10px;
+    margin: 0 0.625rem;
     img {
       width: 100%;
     }
     .trending-product-text {
-      margin-left: 8px;
+      margin-left: 0.5rem;
       h3 {
         pointer-events: stroke;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-family: "Brandon Grotesque";
         font-weight: 700;
         margin: 0;
       }
       h6 {
-        font-size: 15px;
+        font-size: 0.9375rem;
         font-family: "Proxima Nova";
         font-weight: 400;
         color: f.$black75;
         margin: 0;
-        margin-bottom: 4px;
+        margin-bottom: 0.25rem;
       }
       h4 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-family: "Brandon Grotesque";
         font-weight: 700;
         margin: 0;
         color: f.$black;
-        margin-bottom: 8px;
+        margin-bottom: 0.5rem;
       }
     }
   }
@@ -99,6 +98,6 @@
       text-align: center;
     }
     justify-content: center;
-    margin-bottom: 100px;
+    margin-bottom: 6.25rem;
   }
 }

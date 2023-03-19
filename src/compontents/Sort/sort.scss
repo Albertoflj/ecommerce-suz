@@ -1,27 +1,27 @@
 @use "../main-styles/fonts/fonts.scss" as f;
 .sort {
-  padding: 16px;
-  box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
+  padding: 1rem;
+  box-shadow: 0 0.3125rem 0.5625rem 0 rgba(35, 28, 28, 0.3);
 
-  border-radius: 20px;
-  width: 110px;
+  border-radius: 1.25rem;
+  width: 6.875rem;
   background-color: white;
   z-index: 1000;
-  top: 200px;
+  top: 12.5rem;
   right: 5%;
   display: flex;
   justify-content: center;
   position: absolute;
   .sort-container {
     .sort-title {
-      font-size: 21px;
+      font-size: 1.3125rem;
       margin: 0;
-      margin-bottom: 12px;
+      margin-bottom: 0.75rem;
     }
     .sort-variations {
       p {
         font-family: "Proxima Nova";
-        font-size: 12px;
+        font-size: 0.75rem;
         margin: 0;
         color: f.$black;
       }
@@ -35,7 +35,7 @@
       align-items: center;
     }
     .price-variation {
-      margin-top: 8px;
+      margin-top: 0.5rem;
     }
   }
 }

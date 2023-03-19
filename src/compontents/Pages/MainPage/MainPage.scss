@@ -3,43 +3,43 @@
 
 .hero-section {
   margin: auto;
-  margin-top: 100px;
+  margin-top: 6.25rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 134px;
-  max-width: 1420px;
+  margin-bottom: 8.375rem;
+  max-width: 88.75rem;
   .mobile-medium {
     display: none;
   }
   h1 {
-    font-size: 60px;
+    font-size: 3.75rem;
     font-family: "Brandon Grotesque";
     font-weight: 700;
     margin-bottom: 0;
   }
   .main-text {
-    max-width: 542px;
+    max-width: 33.875rem;
     width: 100%;
     line-height: 300%;
     color: f.$black;
     p {
-      max-width: 512px;
-      font-size: 24px;
+      max-width: 32rem;
+      font-size: 1.5rem;
       font-family: "Proxima Nova";
       font-weight: 400;
       line-height: 1.2;
     }
   }
   .shop-now {
-    padding: 8px 24px;
+    padding: 0.5rem 1.5rem;
     background-color: f.$orange;
     font-family: "Brandon Grotesque";
     font-weight: 700;
-    font-size: 21px;
+    font-size: 1.3125rem;
     color: white;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
     margin-left: 30%;
@@ -54,27 +54,27 @@
     align-items: center;
   }
   .content-left-side {
-    margin-right: 20px;
+    margin-right: 1.25rem;
   }
 }
 .categories-section {
-  min-height: 400px;
-  max-width: 1020px;
+  min-height: 25rem;
+  max-width: 63.75rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 auto;
-  margin-top: 300px;
-  margin-bottom: 200px;
+  margin-top: 18.75rem;
+  margin-bottom: 12.5rem;
   .categories-men,
   .categories-women {
     width: 100%;
-    max-width: 454px;
+    max-width: 28.375rem;
     height: inherit;
   }
 
   .category-image {
-    box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
+    box-shadow: 0 0.3125rem 0.5625rem 0 rgba(35, 28, 28, 0.3);
   }
   .cat-centr {
     display: flex;
@@ -85,21 +85,21 @@
   .cat-man,
   .cat-woman {
     height: 100%;
-    max-height: 324px;
-    border-radius: 10px;
-    box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
+    max-height: 20.25rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.3125rem 0.5625rem 0 rgba(35, 28, 28, 0.3);
   }
   .cat-man {
-    width: calc(100% - 10px);
+    width: calc(100% - 0.625rem);
     // background-color: blue;
     background-image: url("../../../Assets/Products/men/photo_1a.jpg");
     background-size: cover;
     background-position: center;
-    margin-right: 10px;
+    margin-right: 0.625rem;
   }
   .cat-woman {
-    margin-left: 10px;
-    width: calc(100% - 10px);
+    margin-left: 0.625rem;
+    width: calc(100% - 0.625rem);
     // background-color: red;
     background-image: url("../../../Assets/Products/women/1.jpg");
     background-size: cover;
@@ -111,8 +111,8 @@
 //   .categories-section {
 //     .categories-men,
 //     .categories-women {
-//       height: 400px;
-//       max-width: 400px;
+//       height: 25rem;
+//       max-width: 25rem;
 //     }
 //   }
 // }
@@ -121,34 +121,34 @@
   .hero-section {
     justify-content: space-between;
     h1 {
-      font-size: 42px;
+      font-size: 2.625rem;
     }
     .main-text {
-      max-width: 542px;
+      max-width: 33.875rem;
       p {
-        max-width: 412px;
-        font-size: 21px;
+        max-width: 25.75rem;
+        font-size: 1.3125rem;
       }
     }
     .shop-now {
-      padding: 8px 24px;
+      padding: 0.5rem 1.5rem;
       background-color: f.$orange;
-      font-size: 21px;
+      font-size: 1.3125rem;
     }
   }
 }
 @include breakpoint-down(medium) {
   .hero-section {
-    margin-top: 12px;
+    margin-top: 0.75rem;
     flex-direction: column;
     h1 {
-      font-size: 42px;
+      font-size: 2.625rem;
     }
     .main-text {
-      max-width: 542px;
+      max-width: 33.875rem;
       p {
-        max-width: 412px;
-        font-size: 21px;
+        max-width: 25.75rem;
+        font-size: 1.3125rem;
       }
     }
     .desktop-medium {
@@ -158,14 +158,14 @@
       display: flex;
     }
     .shop-now {
-      padding: 8px 24px;
+      padding: 0.5rem 1.5rem;
       background-color: f.$orange;
-      font-size: 21px;
+      font-size: 1.3125rem;
       margin-left: 0;
-      margin-top: 70px;
+      margin-top: 4.375rem;
     }
     .content-right-side {
-      margin-top: 20px;
+      margin-top: 1.25rem;
     }
     .content-left-side {
       display: flex;
@@ -186,7 +186,7 @@
     }
   }
   .categories-section {
-    margin-top: 100px;
+    margin-top: 6.25rem;
   }
 }
 @include breakpoint-down(small) {
@@ -195,7 +195,7 @@
     flex-direction: column;
     .cat-man,
     .cat-woman {
-      height: 600px;
+      height: 37.5rem;
       margin: 0;
     }
   }

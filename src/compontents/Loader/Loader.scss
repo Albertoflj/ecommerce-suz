@@ -6,18 +6,18 @@
   justify-content: center;
 }
 .loader {
-  width: 100px;
+  width: 6.25rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin: 0 auto;
 }
 .loader span {
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   border-radius: 50%;
-  border: 4px solid #bbb;
-  border-top: 4px solid #ee9828;
+  border: 0.25rem solid #bbb;
+  border-top: 0.25rem solid #ee9828;
   animation: animate 1s linear infinite;
 }
 @keyframes animate {

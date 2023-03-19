@@ -4,14 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 396px;
+  max-width: 24.75rem;
   width: 100%;
   overflow-x: hidden;
-  box-shadow: 0 5px 9px 0 rgba(35, 28, 28, 0.3);
+  box-shadow: 0 0.3125rem 0.5625rem 0 rgba(35, 28, 28, 0.3);
   img {
     animation: slide 15s infinite ease-in-out;
-    max-width: 396px;
-    height: 396px;
+    max-width: 24.75rem;
+    height: 24.75rem;
   }
 }
 @keyframes slide {
@@ -43,11 +43,11 @@
 
 @include breakpoint-down(large) {
   .slide-show {
-    max-width: 350px;
+    max-width: 21.875rem;
     width: 100%;
     img {
-      max-width: 350px;
-      height: 350px;
+      max-width: 21.875rem;
+      height: 21.875rem;
     }
   }
 }

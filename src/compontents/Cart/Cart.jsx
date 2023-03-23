@@ -39,6 +39,7 @@ const Cart = (props) => {
                 {lineItems.map((product) => {
                   return (
                     <ProductCard
+                      key={`product-${product.id}`}
                       product={product}
                       quantity={product.quantity}
                       className="product-list-item  "

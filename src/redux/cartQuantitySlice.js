@@ -5,7 +5,7 @@ export const getCartItems = createAsyncThunk(
   "catQuantity/getCartItems",
   async () => {
     try {
-      const cartId = await commerce.cart.id();
+      const cartId = commerce.cart.id();
       const cartQuantity = await commerce.cart.retrieve(cartId);
       return cartQuantity.total_items;
     } catch (error) {

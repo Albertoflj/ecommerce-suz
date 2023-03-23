@@ -21,9 +21,7 @@ const ProductCard = (props) => {
     cart
       ? commerce.cart
           .remove(product.id)
-          .then((response) => {
-            console.log(response);
-          })
+
           .catch((error) => {
             console.log(error);
           })

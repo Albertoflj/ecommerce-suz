@@ -6,6 +6,9 @@ import { useState, useEffect, useRef } from "react";
 import { commerce } from "../../../lib/commerce";
 import Sizes from "../../Sizes/Sizes";
 import Loader from "../../Loader/Loader";
+import { useDispatch } from "react-redux";
+import { getCartItems } from "../../../redux/cartQuantitySlice";
+import { finished } from "stream-browserify";
 
 const SingleProductPage = (props) => {
   let product = props.product;
@@ -16,6 +19,7 @@ const SingleProductPage = (props) => {
   const selectSize = (size) => {
     setIsSizeSelected(size);
   };
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetchVariants();
@@ -46,6 +50,8 @@ const SingleProductPage = (props) => {
 
   const addToCart = async (productId, quantity) => {
     await commerce.cart.add(productId, quantity);
+    console.log(finished);
+    dispatch(getCartItems());
   };
 
   return (

@@ -92,6 +92,10 @@
                 color: white;
               }
             }
+            &:active {
+              background-color: f.$orange;
+              opacity: 0.6;
+            }
           }
         }
         .product-size {
